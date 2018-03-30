@@ -14,7 +14,7 @@ RTL-implementation and generate a binary for simulation.
 
 * Download and build riscv-tests by `make target=rvtests`
 * Run a test by `make target=run_test`
-    * Change a benchmark by changing the [test](https://github.com/vegaluisjose/cse548-18sp-hw/blob/master/hw1/Makefile#L3) variable
+    * Change a benchmark by changing the [test](https://bitbucket.org/taylor-bsg/cse548-18sp-hw/src/master/hw1/Makefile#L3) variable
 * Other compiled benchmark tests can be found in `ls ./out/rvtests/share/riscv-tests/benchmarks`
 * Other compiled isa tests can be found in `ls ./out/rvtests/share/riscv-tests/isa`
 
@@ -33,7 +33,7 @@ RTL-implementation and generate a binary for simulation.
 | spmv          | FAIL    |
 | vvadd         | PASS    |
 
-### Build and run a simple [hello-world](https://github.com/vegaluisjose/cse548-18sp-hw/blob/master/hw1/src/hello.c)
+### Build and run a simple [hello-world](https://bitbucket.org/taylor-bsg/cse548-18sp-hw/src/master/hw1/src/hello.c)
     
 * Build `make target=hello`
 * Run `make target=run_hello`

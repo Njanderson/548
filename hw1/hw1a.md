@@ -22,7 +22,7 @@ solved the major decision designs of implementing an in-order RISC-V core.
             * Yes, [code](https://github.com/pulp-platform/ariane/blob/master/src/ariane.sv#L653) (this would be a line-number example)
         * What performance events related to the L1-cache are supported?
             * i-cache miss and d-cache miss [code](https://github.com/pulp-platform/ariane/blob/master/src/perf_counters.sv#L32-L33) (this would be a code-block example)
-* You will submit a pdf file containing the questions and answers as shown [here](https://github.com/vegaluisjose/cse548-18sp-hw/blob/master/hw1/hw1a_john_doe.pdf)
+* You will submit a pdf file containing the questions and answers as shown [here](https://bitbucket.org/taylor-bsg/cse548-18sp-hw/src/master/hw1/hw1a_john_doe.pdf)
 * You will create the pdf with google-docs and use the link feature described [here](https://support.google.com/docs/answer/45893?co=GENIE.Platform%3DDesktop&hl=en)
 * Where are the implementation files for the processor?
     * [Source](https://github.com/pulp-platform/ariane/tree/master/src)
