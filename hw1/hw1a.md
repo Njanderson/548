@@ -29,6 +29,7 @@ solved the major decision designs of implementing an in-order RISC-V core.
     * [Include](https://github.com/pulp-platform/ariane/tree/master/include)
 * Ask questions if you don't understand something
 * You can pair in group of two for the assignment
+* Add the name of the group members to the document
 
 ## Questions
 
@@ -38,20 +39,20 @@ solved the major decision designs of implementing an in-order RISC-V core.
 4. Does the system have any prefetchers? If so, then what is the algorithm? What patterns can it prefetch and can it not prefetch?
 5. What is the iTLB and dTLB # of entries, hashing algorithm, latency, and replacement algorithm (is the system virtually indexed, physically tag, or something else?)
 6. What are the L1 data and instruction cache sizes, block size, replacement policies, associativity and latencies. Any additional latency for byte accesses?
-6a. Are the caches write-thru or write-back? How many words are written into the cache at a time during a miss? What information does it track about a line? Is it write-allocate?
-7. Can the L1 pipeline do unaligned loads? How does it accomplish this? Does it need to read the data memory multiple times, and what happens to the pipeline?
-8. How does the pipeline handle a load to the same address as an immediately preceding store instruction?
-9. Are the L1 caches non-blocking, and if so, under what conditions is it non-blocking (i.e. how many simultaneous misses, and requirements on addresses?)
-10.  If the L1 cache is non-blocking, how does it handle RAW hazards through memory?
-11. What is the Branch predictor algorithm, geometric of table, replacement strategy, mispredict latency
-12. Is the divider iterative or pipelined? What is the latency and occupancy? Can other instructions execute while it is running?
-13. Is the multiplier iterative or pipelined? What is the latency and occupancy? Can other instructions execute while it is running?
-14. Is the TLB multi-level?
-15. Is it possible to execute more than one instruction at a time at the same time (i.e. superscalar)?
-16. What performance counters available? 
-17. A TLB miss is handled via software or hardware in this processor? Describe how it works?
-18. How many bits wide are virtual and physical addresses in the system
-19. How does the processor connect to DRAM?
-20. What important microarchitectural questions did we miss, and what is the answer?
+7. Are the caches write-thru or write-back? How many words are written into the cache at a time during a miss? What information does it track about a line? Is it write-allocate?
+8. Can the L1 pipeline do unaligned loads? How does it accomplish this? Does it need to read the data memory multiple times, and what happens to the pipeline?
+9. How does the pipeline handle a load to the same address as an immediately preceding store instruction?
+10. Are the L1 caches non-blocking, and if so, under what conditions is it non-blocking (i.e. how many simultaneous misses, and requirements on addresses?)
+11.  If the L1 cache is non-blocking, how does it handle RAW hazards through memory?
+12. What is the Branch predictor algorithm, geometric of table, replacement strategy, mispredict latency
+13. Is the divider iterative or pipelined? What is the latency and occupancy? Can other instructions execute while it is running?
+14. Is the multiplier iterative or pipelined? What is the latency and occupancy? Can other instructions execute while it is running?
+15. Is the TLB multi-level?
+16. Is it possible to execute more than one instruction at a time at the same time (i.e. superscalar)?
+17. What performance counters available? 
+18. A TLB miss is handled via software or hardware in this processor? Describe how it works?
+19. How many bits wide are virtual and physical addresses in the system
+20. How does the processor connect to DRAM?
+21. What important microarchitectural questions did we miss, and what is the answer?
 
 ## Turnin using [canvas](https://canvas.uw.edu/courses/1199347/assignments/4191655)
