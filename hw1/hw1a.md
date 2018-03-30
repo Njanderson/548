@@ -33,6 +33,8 @@ solved the major decision designs of implementing an in-order RISC-V core.
 * You can discuss in larger groups, but just to discuss how the code works, not to write it up.
 * Add the name of the both your team member and any "larger group" members to the document.
 
+## How to navigate the Verilog (Luis will add)
+
 ## Questions
 
 1. How many bits wide is the datapath?
