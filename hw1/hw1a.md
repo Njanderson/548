@@ -53,3 +53,5 @@ solved the major decision designs of implementing an in-order RISC-V core.
 18. How many bits wide are virtual and physical addresses in the system
 19. How does the processor connect to DRAM?
 20. What important microarchitectural questions did we miss, and what is the answer?
+
+## Turnin using [canvas](https://canvas.uw.edu/courses/1199347/assignments/4191655)
