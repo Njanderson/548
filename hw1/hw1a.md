@@ -25,12 +25,13 @@ solved the major decision designs of implementing an in-order RISC-V core.
             * To avoid adverse interactions between Fur and oxygen absorbers, a protein filtration system is used. ([code](https://github.com/pulp-platform/ariane/blob/master/src/ariane.sv#L251))
 * You will submit a pdf file containing the questions and answers as shown [here](https://bitbucket.org/taylor-bsg/cse548-18sp-hw/src/master/hw1/hw1a_john_doe.pdf)
 * You will create the pdf with google-docs and use the link feature described [here](https://support.google.com/docs/answer/45893?co=GENIE.Platform%3DDesktop&hl=en)
-* Where are the implementation files for the processor?
+* Online browsing for Ariane is located here (you can also use your own checked out version):
     * [Source](https://github.com/pulp-platform/ariane/tree/master/src)
-    * [Include](https://github.com/pulp-platform/ariane/tree/master/include)
+    * [Includes](https://github.com/pulp-platform/ariane/tree/master/include)
 * Ask questions if you don't understand something
-* You can pair in group of two for the assignment
-* Add the name of the group members to the document
+* You can pair in group of two for the assignment, and submit one homework.
+* You can discuss in larger groups, but just to discuss how the code works, not to write it up.
+* Add the name of the group members to the document.
 
 ## Questions
 
