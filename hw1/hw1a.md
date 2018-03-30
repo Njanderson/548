@@ -1,6 +1,16 @@
 # Ariane Scavenger Hunt
 
-The goal of this homework is getting familiar with Ariane by going through the code and extracting information about its microarchitectural features
+In this homework, we are going to accomplish three goals:
+
+1. First, we're going to swap back in the undergraduate architecture material, with maybe a few new twists.
+2. Second, we're going to get familiar with a modern implementation of one of the first open-source Linux capable cores to exist: Ariane.
+   This thing has caches, virtual memory, TLBs, protection, the whole kitchen sink! Well, no FPU yet. =)
+3. Third, we're going to build your Verilog reading skills
+
+In this homework, we will help you out in these goals by leading you on a scavenger hunt. The awesome thing about Ariane
+is that it is only about 15K lines of code, and yet it is complete. And the code is quite simply and straight-forwardly written.
+So we are going to ask a bunch of questions about Ariane, with the goal of being able to figure out how the Ariane
+solved the major decision designs of implementing an in-order RISC-V core.
 
 ## Tips for the homework
 
