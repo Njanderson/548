@@ -33,24 +33,23 @@ solved the major decision designs of implementing an in-order RISC-V core.
 ## Questions
 
 1. How many bits wide is the datapath?
-2. List the functional units available?
-3. List the ALU instructions available?
-4. How many execution cycles for an ALU operation?
-5. Does this implementation support multiplication? if so, how many execution cycles for multiplication?
-6. Does this implementation support division? if so, how many execution cycles for division?
-7. Does this implementation support floating point?
-8. How many entries for the instruction Translation Lookaside Buffer (TLB)?
-9. How many entries for the data TLB?
-10. What is the TLB replacement algorithm?
-11. How many levels has the TLB?
-12. How many entries available for the Branch Target Buffer (BTB)?
-13. What branch prediction algorithm is used?
-14. Is it possible to execute more than one fuctional unit at the same time?
-15. List the performance counters available?
-16. What is the size in bytes of the instruction cache?
-17. What is the associativity of the instruction cache?
-18. What is the total size in bytes of the data-memory used in the data cache?
-19. What is the total size in bytes of the tag-memory used in the data cache?
-20. Is the data cache blocking or non-blocking?
-21. A TLB miss is handled via software or hardware in this processor?
-22. How many bits wide is the address of the virtual memory system?
+2. What are the latencies and occupancies of the functional units?
+3. What is the BTB number of entries, replacement algorithm, hashing algorithm, and branch taken penalty
+4. Does the system have any prefetchers? If so, then what is the algorithm? What patterns can it prefetch and can it not prefetch?
+5. What is the iTLB and dTLB # of entries, hashing algorithm, latency, and replacement algorithm (is the system virtually indexed, physically tag, or something else?)
+6. What are the L1 data and instruction cache sizes, block size, replacement policies, associativity and latencies. Any additional latency for byte accesses?
+6a. Are the caches write-thru or write-back? How many words are written into the cache at a time during a miss? What information does it track about a line? Is it write-allocate?
+7. Can the L1 pipeline do unaligned loads? How does it accomplish this? Does it need to read the data memory multiple times, and what happens to the pipeline?
+8. How does the pipeline handle a load to the same address as an immediately preceding store instruction?
+9. Are the L1 caches non-blocking, and if so, under what conditions is it non-blocking (i.e. how many simultaneous misses, and requirements on addresses?)
+10.  If the L1 cache is non-blocking, how does it handle RAW hazards through memory?
+11. What is the Branch predictor algorithm, geometric of table, replacement strategy, mispredict latency
+12. Is the divider iterative or pipelined? What is the latency and occupancy? Can other instructions execute while it is running?
+13. Is the multiplier iterative or pipelined? What is the latency and occupancy? Can other instructions execute while it is running?
+14. Is the TLB multi-level?
+15. Is it possible to execute more than one instruction at a time at the same time (i.e. superscalar)?
+16. What performance counters available? 
+17. A TLB miss is handled via software or hardware in this processor? Describe how it works?
+18. How many bits wide are virtual and physical addresses in the system
+19. How does the processor connect to DRAM?
+20. What important questions did we miss?
