@@ -52,4 +52,4 @@ solved the major decision designs of implementing an in-order RISC-V core.
 17. A TLB miss is handled via software or hardware in this processor? Describe how it works?
 18. How many bits wide are virtual and physical addresses in the system
 19. How does the processor connect to DRAM?
-20. What important questions did we miss?
+20. What important microarchitectural questions did we miss, and what is the answer?
