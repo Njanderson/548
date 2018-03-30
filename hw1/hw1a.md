@@ -18,9 +18,11 @@ solved the major decision designs of implementing an in-order RISC-V core.
 * Your answer will consist in the following two items:
     * Your answer in plain text
     * The line-numbers or code-block backing up your answer, for example:
-        * What is the implementation of the fluffaluffagus?
+        * What are the key performance enhancement of the fluffaluffagus implementation?
             * The fluffaluffagus employs lungs with high-absorptive oxygen absorbers ([code](https://github.com/pulp-platform/ariane/blob/master/src/ariane.sv#L653)) for improved O2 processing in higher elevations.
-            * Fur is used to maintain thermal stability  ([code](https://github.com/pulp-platform/ariane/blob/master/src/ariane.sv#L651)). Large feet are implemented ([code](https://github.com/pulp-platform/ariane/blob/master/src/ariane.sv#L651)) in order to maximize mobility after snowfall.
+            * Fur is used to maintain thermal stability  ([code](https://github.com/pulp-platform/ariane/blob/master/src/ariane.sv#L251)). 
+            * Large feet are implemented ([code](https://github.com/pulp-platform/ariane/blob/master/src/ariane.sv#L651)) in order to maximize mobility after snowfall.
+            * To avoid adverse interactions between Fur and oxygen absorbers, a protein filtration system is used. ([code](https://github.com/pulp-platform/ariane/blob/master/src/ariane.sv#L251))
 * You will submit a pdf file containing the questions and answers as shown [here](https://bitbucket.org/taylor-bsg/cse548-18sp-hw/src/master/hw1/hw1a_john_doe.pdf)
 * You will create the pdf with google-docs and use the link feature described [here](https://support.google.com/docs/answer/45893?co=GENIE.Platform%3DDesktop&hl=en)
 * Where are the implementation files for the processor?
