@@ -28,7 +28,7 @@ solved the major decision designs of implementing an in-order RISC-V core.
     * [Source](https://github.com/pulp-platform/ariane/tree/master/src)
     * [Include](https://github.com/pulp-platform/ariane/tree/master/include)
 * Ask questions if you don't understand something
-
+* You can pair in group of two for the assignment
 
 ## Questions
 
