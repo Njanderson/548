@@ -29,9 +29,9 @@ solved the major decision designs of implementing an in-order RISC-V core.
     * [Source](https://github.com/pulp-platform/ariane/tree/master/src)
     * [Includes](https://github.com/pulp-platform/ariane/tree/master/include)
 * Ask questions if you don't understand something
-* You can pair in group of two for the assignment, and submit one homework.
+* You can pair in a team of two for the assignment, and submit one homework.
 * You can discuss in larger groups, but just to discuss how the code works, not to write it up.
-* Add the name of the group members to the document.
+* Add the name of the both your team member and any "larger group" members to the document.
 
 ## Questions
 
