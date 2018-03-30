@@ -33,7 +33,13 @@ solved the major decision designs of implementing an in-order RISC-V core.
 * You can discuss in larger groups, but just to discuss how the code works, not to write it up.
 * Add the name of the both your team member and any "larger group" members to the document.
 
-## How to navigate the Verilog (Luis will add)
+## How to navigate the Verilog
+
+The following slides will help you navigate the code:
+
+1. [Verilog 101](https://courses.cs.washington.edu/courses/cse548/18sp/uwnetid/slides/T1_verilog.pdf)
+2. [Verilog 102](https://courses.cs.washington.edu/courses/cse548/18sp/uwnetid/slides/T2_verilog.pdf)
+3. [Verilog 103](https://courses.cs.washington.edu/courses/cse548/18sp/uwnetid/slides/T3_verilog.pdf)
 
 ## Questions
 
