@@ -1,6 +1,6 @@
 target ?= ariane
 
-test ?= benchmarks/spmv.riscv
+test ?= benchmarks/median.riscv
 
 # simulation options
 # sim_opt = -p, show simulation
