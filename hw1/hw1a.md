@@ -37,8 +37,8 @@ solved the major decision designs of implementing an in-order RISC-V core.
 
 The following slides will help you navigate the code:
 
-1. [Verilog 101](https://courses.cs.washington.edu/courses/cse548/18sp/uwnetid/slides/T1_verilog.pdf)
-2. [Verilog 102](https://courses.cs.washington.edu/courses/cse548/18sp/uwnetid/slides/T2_verilog.pdf)
+1. [Verilog 101](https://courses.cs.washington.edu/courses/cse548/18sp/uwnetid/slides/verilog_1.pdf)
+2. [Verilog 102](https://courses.cs.washington.edu/courses/cse548/18sp/uwnetid/slides/verilog_2.pdf)
 
 ## Questions
 
