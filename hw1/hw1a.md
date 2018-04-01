@@ -54,7 +54,7 @@ The following slides will help you navigate the code:
 
 1. How many bits wide is the datapath?
 2. What are the latencies and occupancies of the functional units?
-3. What is the BTB number of entries, replacement algorithm, hashing algorithm, and branch taken penalty
+3. What is the BTB number of entries, replacement algorithm, hashing algorithm, and branch taken penalty?
 4. Does the system have any prefetchers? If so, then what is the algorithm? What patterns can it prefetch and can it not prefetch?
 5. What is the iTLB and dTLB # of entries, hashing algorithm, latency, and replacement algorithm (is the system virtually indexed, physically tag, or something else?)
 6. What are the L1 data and instruction cache sizes, block size, replacement policies, associativity and latencies. Any additional latency for byte accesses?
@@ -63,7 +63,7 @@ The following slides will help you navigate the code:
 9. How does the pipeline handle a load to the same address as an immediately preceding store instruction?
 10. Are the L1 caches non-blocking, and if so, under what conditions is it non-blocking (i.e. how many simultaneous misses, and requirements on addresses?)
 11.  If the L1 cache is non-blocking, how does it handle RAW hazards through memory?
-12. What is the Branch predictor algorithm, geometric of table, replacement strategy, mispredict latency
+12. What is the branch predictor algorithm, geometric of table, replacement strategy, mispredict latency?
 13. Is the divider iterative or pipelined? What is the latency and occupancy? Can other instructions execute while it is running?
 14. Is the multiplier iterative or pipelined? What is the latency and occupancy? Can other instructions execute while it is running?
 15. Is the TLB multi-level?
