@@ -10,7 +10,7 @@ In this homework, we are going to accomplish three goals:
 In this homework, we will help you out in these goals by leading you on a scavenger hunt. The awesome thing about Ariane
 is that it is only about 15K lines of code, and yet it is complete. And the code is quite simply and straight-forwardly written.
 So we are going to ask a bunch of questions about Ariane, with the goal of being able to figure out how the Ariane
-solved the major decision designs of implementing an in-order RISC-V core.
+solved the major design decisions of implementing an in-order RISC-V core.
 
 ## Tips for the homework
 
