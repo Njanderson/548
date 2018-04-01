@@ -38,7 +38,8 @@ solved the major decision designs of implementing an in-order RISC-V core.
 
 The most important thing to keep in mind about SystemVerilog is that each line
 of code directly turns into a piece of hardware. You are not specifying the computation
-you want to do, you are specifying the hardware you want to build.
+you want to do, you are specifying the hardware you want to build! It is often helpful
+to draw a visual sketch of the hardware.
 
 The following slides will help you navigate the code:
 
