@@ -27,6 +27,7 @@ solved the major decision designs of implementing an in-order RISC-V core.
 * You will create the pdf with google-docs and use the link feature described [here](https://support.google.com/docs/answer/45893?co=GENIE.Platform%3DDesktop&hl=en)
 * Online browsing for Ariane is located here (you can also use your own checked out version):
     * [Source](https://github.com/pulp-platform/ariane/tree/master/src)
+    * [Diagram] (https://github.com/pulp-platform/ariane)
     * [Includes](https://github.com/pulp-platform/ariane/tree/master/include)
 * Ask questions if you don't understand something
 * You can pair in a team of two for the assignment, and submit one homework.
