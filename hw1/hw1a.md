@@ -37,7 +37,7 @@ solved the major decision designs of implementing an in-order RISC-V core.
 ## How to navigate the Verilog / SystemVerilog
 
 The most important thing to keep in mind about SystemVerilog is that each line
-of code direct turns into a piece of hardware. You are not specifying the computation
+of code directly turns into a piece of hardware. You are not specifying the computation
 you want to do, you are specifying the hardware you want to build.
 
 The following slides will help you navigate the code:
