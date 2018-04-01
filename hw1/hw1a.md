@@ -40,7 +40,7 @@ The following slides will help you navigate the code:
 
 1. [Verilog 101](https://courses.cs.washington.edu/courses/cse548/18sp/uwnetid/slides/verilog_1.pdf)
 2. [Verilog 102](https://courses.cs.washington.edu/courses/cse548/18sp/uwnetid/slides/verilog_2.pdf)
-3. [Verilog 102](https://courses.cs.washington.edu/courses/cse548/18sp/uwnetid/slides/verilog_3.pdf)
+3. [Verilog 103](https://courses.cs.washington.edu/courses/cse548/18sp/uwnetid/slides/verilog_3.pdf)
 
 ## Questions
 
