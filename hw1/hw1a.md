@@ -47,7 +47,7 @@ The following slides will help you navigate the code:
 3. [Verilog 103](https://courses.cs.washington.edu/courses/cse548/18sp/uwnetid/slides/verilog_3.pdf)
 4. [SNUG Tips on SystemVerilog](https://courses.cs.washington.edu/courses/cse548/18sp/uwnetid/slides/2013-SNUG-SV_Synthesizable-SystemVerilog_presentation.pdf)
 5. [SNUG Tips on SystemVerilog](https://courses.cs.washington.edu/courses/cse548/18sp/uwnetid/slides/2013-SNUG-SV_Synthesizable-SystemVerilog_paper.pdf)
-6. [SystemVerilog 2009 Language Specification(IEEE_1800_2009_SystemVerilog.pdf)
+6. [SystemVerilog 2009 Language Specification](https://courses.cs.washington.edu/courses/cse548/18sp/uwnetid/slides/IEEE_1800_2009_SystemVerilog.pdf)
 
 ## Questions
 
