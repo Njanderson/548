@@ -34,13 +34,18 @@ solved the major decision designs of implementing an in-order RISC-V core.
 * You can discuss in larger groups, but just to discuss how the code works, not to write it up.
 * Add the name of the both your team member and any "larger group" members to the document.
 
-## How to navigate the Verilog
+## How to navigate the Verilog / SystemVerilog
+
+The most important thing to keep in mind about SystemVerilog is that each line
+of code direct turns into a piece of hardware. You are not specifying the computation
+you want to do, you are specifying the hardware you want to build.
 
 The following slides will help you navigate the code:
 
 1. [Verilog 101](https://courses.cs.washington.edu/courses/cse548/18sp/uwnetid/slides/verilog_1.pdf)
 2. [Verilog 102](https://courses.cs.washington.edu/courses/cse548/18sp/uwnetid/slides/verilog_2.pdf)
 3. [Verilog 103](https://courses.cs.washington.edu/courses/cse548/18sp/uwnetid/slides/verilog_3.pdf)
+4. [SNUG Tips on SystemVerilog](https://courses.cs.washington.edu/courses/cse548/18sp/uwnetid/slides/2013-SNUG-SV_Synthesizable-SystemVerilog_presentation.pdf)
 
 ## Questions
 
