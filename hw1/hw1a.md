@@ -14,7 +14,7 @@ solved the major decision designs of implementing an in-order RISC-V core.
 
 ## Tips for the homework
 
-* You will get a question about a microarchitectural feature of the processor
+* You will answer a series of questions about microarchitectural features of the processor.
 * Your answer will consist in the following two items:
     * Your answer in plain text
     * The line-numbers or code-block backing up your answer, for example:
@@ -29,7 +29,7 @@ solved the major decision designs of implementing an in-order RISC-V core.
     * [Source](https://github.com/pulp-platform/ariane/tree/master/src)
     * [Diagram] (https://github.com/pulp-platform/ariane)
     * [Includes](https://github.com/pulp-platform/ariane/tree/master/include)
-* Ask questions if you don't understand something
+* Ask questions if you don't understand something!
 * You can pair in a team of two for the assignment, and submit one homework.
 * You can discuss in larger groups, but just to discuss how the code works, not to write it up.
 * Add the name of the both your team member and any "larger group" members to the document.
@@ -72,6 +72,6 @@ The following slides will help you navigate the code:
 18. A TLB miss is handled via software or hardware in this processor? Describe how it works?
 19. How many bits wide are virtual and physical addresses in the system
 20. How does the processor connect to DRAM?
-21. What important microarchitectural questions did we miss, and what is the answer?
+21. What important architecture/microarchitectural questions did we miss, and what is the answer?
 
 ## Turnin using [canvas](https://canvas.uw.edu/courses/1199347/assignments/4191655)
