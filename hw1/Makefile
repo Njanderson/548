@@ -4,7 +4,7 @@ test ?= benchmarks/median.riscv
 
 # simulation options
 # sim_opt = -p, show simulation
-# sim_opt = "--vcd=test", store waveform in test.vcd
+sim_opt = "--vcd=test" #, store waveform in test.vcd
 
 # verilator_ins env-variable is defined in Dockerfile
 verilator_bin = $(verilator_ins)/bin/verilator
@@ -96,6 +96,7 @@ $(rvtests_dir):
 
 # hello world
 CC = riscv64-unknown-elf-gcc
+OBJDUMP = riscv64-unknown-elf-objdump
 
 hello: $(out_dir)/hello.riscv
 
@@ -109,6 +110,11 @@ $(out_dir)/hello.riscv: $(src_dir)/hello.c $(rvtests_dir)
 	-fno-builtin-printf $(rvtests_dir)/benchmarks/common/syscalls.c -static -nostdlib \
 	$(rvtests_dir)/benchmarks/common/crt.S  -nostartfiles -lm -lgcc \
 	-T $(rvtests_dir)/benchmarks/common/test.ld -o $@ $<
+
+$(out_dir)/hello.dump: $(out_dir)/hello.riscv
+	$(OBJDUMP) --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.data $< > $@
+
+dump: $(out_dir)/hello.dump
 
 clean:
 	$(docker_cmd) /bin/rm -rf $(docker_out_dir)
