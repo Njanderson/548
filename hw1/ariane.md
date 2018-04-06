@@ -37,3 +37,5 @@ RTL-implementation and generate a binary for simulation.
     
 * Build `make target=hello`
 * Run `make target=run_hello`
+* Disassemble `make target=dump`
+    * Objdump file located at `./out/hello.dump`
