@@ -7,13 +7,13 @@ RUN apt-get install -y software-properties-common
 RUN apt-get install -y tmux curl git man unzip vim wget
 
 # riscv and verilator dependencies
-RUN apt install -y flex bison
+RUN apt-get install -y flex bison
 
 # riscv dependencies
-RUN apt install -y autoconf automake autotools-dev curl libmpc-dev
-RUN apt install -y libmpfr-dev libgmp-dev gawk texinfo gperf libtool
-RUN apt install -y patchutils bc zlib1g-dev libexpat-dev
-RUN apt install -y device-tree-compiler
+RUN apt-get install -y autoconf automake autotools-dev curl libmpc-dev
+RUN apt-get install -y libmpfr-dev libgmp-dev gawk texinfo gperf libtool
+RUN apt-get install -y patchutils bc zlib1g-dev libexpat-dev
+RUN apt-get install -y device-tree-compiler
 
 ENV HOME /home
 WORKDIR /home
@@ -72,7 +72,7 @@ RUN cd ${spike_bld} && make
 RUN cd ${spike_bld} && make install
 
 # setting PATH
-ENV PATH ${toolchain_ins}/bin:${fesvr_ins}/bin:${PATH}
+ENV PATH ${toolchain_ins}/bin:${fesvr_ins}/bin:${verilator_ins}/bin:${PATH}
 
 RUN cd ${HOME}
 
