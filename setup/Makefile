@@ -10,3 +10,9 @@ build:
 
 run:
 	docker run -it $(docker_image_name)
+
+clean:
+	@echo "[INFO] Open Makefile and check the rule called prune, also read README.md"
+
+prune:
+	docker image prune -a
