@@ -751,7 +751,7 @@ module ariane #(
     logic [63:0] cycles;
 
     initial begin
-        f = $fopen("trace.dasm", "w");
+        f = $fopen("trace_core_00_0.dasm", "w");
     end
 
     always_ff @(posedge clk_i or negedge rst_ni) begin
