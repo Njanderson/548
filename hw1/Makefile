@@ -111,10 +111,10 @@ $(out_dir)/hello.riscv: $(src_dir)/hello.c $(rvtests_dir)
 	$(rvtests_dir)/benchmarks/common/crt.S  -nostartfiles -lm -lgcc \
 	-T $(rvtests_dir)/benchmarks/common/test.ld -o $@ $<
 
-$(out_dir)/hello.dump: $(out_dir)/hello.riscv
+$(out_dir)/hello.riscv.dasm: $(out_dir)/hello.riscv
 	$(OBJDUMP) --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.data $< > $@
 
-dump: $(out_dir)/hello.dump
+riscv_dasm: $(out_dir)/hello.riscv.dasm
 
 clean:
 	$(docker_cmd) /bin/rm -rf $(docker_out_dir)
