@@ -5,10 +5,15 @@ RUN apt-get -y upgrade
 RUN apt-get install -y build-essential
 RUN apt-get install -y software-properties-common
 RUN apt-get install -y tmux curl git man unzip vim wget
-RUN apt-get install -y flex bison autoconf automake autotools-dev
-RUN apt-get install -y curl libmpc-dev libmpfr-dev libgmp-dev gawk
-RUN apt-get install -y build-essential bison flex texinfo gperf
-RUN apt-get install -y libtool patchutils bc zlib1g-dev device-tree-compiler
+
+# riscv and verilator dependencies
+RUN apt install -y flex bison
+
+# riscv dependencies
+RUN apt install -y autoconf automake autotools-dev curl libmpc-dev
+RUN apt install -y libmpfr-dev libgmp-dev gawk texinfo gperf libtool
+RUN apt install -y patchutils bc zlib1g-dev libexpat-dev
+RUN apt install -y device-tree-compiler
 
 ENV HOME /home
 WORKDIR /home
