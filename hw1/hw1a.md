@@ -51,6 +51,11 @@ The following slides will help you navigate the code:
 6. [SNUG Tips on SystemVerilog](https://courses.cs.washington.edu/courses/cse548/18sp/uwnetid/slides/2013-SNUG-SV_Synthesizable-SystemVerilog_paper.pdf)
 7. [SystemVerilog 2009 Language Specification](https://courses.cs.washington.edu/courses/cse548/18sp/uwnetid/slides/IEEE_1800_2009_SystemVerilog.pdf)
 
+## Some useful terms
+
+* **Latency**. The number of cycles before the result is available for the next instruction, usually through a bypass path (usually 1 cycle for an ALU instruction; but more cycles for other instructions like floating point, multiplies or divides). 
+* **Occupancy**. The amount of time that it occupies a particular resource. For pipelined instructions, this is usually 1 cycle, but for hardware that uses iterative implementations of multipliers or dividers (integer or floating point) then it will be more than one.
+
 ## Questions
 
 1. How many bits wide is the datapath?
