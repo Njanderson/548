@@ -30,8 +30,11 @@ ariane_pkg_files = \
 $(ariane_inc_dir)/ariane_pkg.sv \
 $(ariane_inc_dir)/nbdcache_pkg.sv
 
+# remove regfile and ariane files from ariane-src-dir
+# use ariane-top from src/ariane.sv instead
 ariane_vfiles = \
-$(filter-out $(ariane_src_dir)/regfile.sv, $(wildcard $(ariane_src_dir)/*.sv)) \
+$(filter-out $(ariane_src_dir)/regfile.sv $(ariane_src_dir)/ariane.sv, $(wildcard $(ariane_src_dir)/*.sv)) \
+$(docker_hw_dir)/src/ariane.sv \
 $(ariane_src_dir)/util/cluster_clock_gating.sv \
 $(ariane_src_dir)/util/behav_sram.sv \
 $(ariane_src_dir)/axi_mem_if/axi2mem.sv \
