@@ -6,8 +6,7 @@ test ?= benchmarks/median.riscv
 # sim_opt = -p, show simulation
 sim_opt = "--vcd=test" #, store waveform in test.vcd
 
-# verilator_ins env-variable is defined in Dockerfile
-verilator_bin = $(verilator_ins)/bin/verilator
+verilator_bin = verilator
 
 hw_dir = $(abspath .)
 

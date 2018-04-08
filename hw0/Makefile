@@ -3,8 +3,7 @@ timeout_cycles = 10
 #sim_type = run # without waveform
 sim_type = run_debug # with waveform
 
-# verilator_ins env-variable is defined in Dockerfile
-verilator_bin = $(verilator_ins)/bin/verilator
+verilator_bin = verilator
 
 hw_dir = $(abspath .)
 
