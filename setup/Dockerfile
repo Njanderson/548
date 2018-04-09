@@ -59,7 +59,7 @@ RUN mkdir -p ${toolchain_bld}
 RUN cd ${toolchain_bld} && ${toolchain_dir}/configure --prefix=${toolchain_ins}
 RUN cd ${toolchain_bld} && make
 
-# riscv spike
+# riscv isa sim
 ENV spike_ver c746388b542eacd2586acfbc0a742b08a5c0bd6f
 ENV spike_dir ${HOME}/riscv-isa-sim
 ENV spike_ins ${spike_dir}/install
@@ -72,7 +72,7 @@ RUN cd ${spike_bld} && make
 RUN cd ${spike_bld} && make install
 
 # setting PATH
-ENV PATH ${toolchain_ins}/bin:${fesvr_ins}/bin:${verilator_ins}/bin:${PATH}
+ENV PATH ${toolchain_ins}/bin:${fesvr_ins}/bin:${verilator_ins}/bin:${spike_ins}/bin:${PATH}
 
 RUN cd ${HOME}
 
