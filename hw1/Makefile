@@ -2,10 +2,6 @@ target ?= ariane
 
 test ?= benchmarks/median.riscv
 
-# simulation options
-# sim_opt = -p, show simulation
-sim_opt = "--vcd=test" #, store waveform in test.vcd
-
 verilator_bin = verilator
 
 hw_dir = $(abspath .)
@@ -53,6 +49,10 @@ docker_hw_dir = /home/hw1
 docker_out_dir = $(docker_hw_dir)/$(out_dirname)
 docker_image_name = cse548
 docker_cmd = docker run -v $(hw_dir):$(docker_hw_dir) -it $(docker_image_name)
+
+# simulation options
+# sim_opt = -p, show simulation
+sim_opt = "--vcd=$(out_dir)/ariane.vcd" #, store waveform in test.vcd
 
 default:
 	$(docker_cmd) /usr/bin/make -C $(docker_hw_dir) $(target)
