@@ -12,7 +12,6 @@ In this homework, we are going to accomplish
 2. Download, build, and run [riscv-tests](https://github.com/riscv/riscv-tests)
     * Download and build riscv-tests by `make target=build_benchmark`
     * Run all benchmarks (except spmv, mm, mt-matmul, and mt-vvadd) by `make target=run_benchmark`
-	* We are going to work with only the benchmarks that PASS
 
 | Benchmark     | Status  |
 | ------------- | ------- |
