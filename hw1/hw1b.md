@@ -1,13 +1,16 @@
 # Profile Ariane
 
-In this homework, we are going to accomplish three goals:
+In this homework, we are going to accomplish
 
 
 # Setup
 
-1. 
-
-## How to download, build, and run [riscv-tests](https://github.com/riscv/riscv-tests)
+1. Lets rebuild the Docker image again
+    * `cd ../setup`
+	* `make`
+	
+2. Download, build, and run [riscv-tests](https://github.com/riscv/riscv-tests)
+    * We are going to work with only the benchmarks that PASS
 
 * Download and build riscv-tests by `make target=build_benchmark`
 * Run all benchmarks (except spmv, mm, mt-matmul, and mt-vvadd) by `make target=run_benchmark`
@@ -26,3 +29,5 @@ In this homework, we are going to accomplish three goals:
 | mm            | FAIL    |
 | mt-matmul     | FAIL    |
 | mt-vvadd      | FAIL    |
+
+# Turin
