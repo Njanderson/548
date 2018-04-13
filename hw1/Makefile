@@ -1,7 +1,5 @@
 target ?= ariane
 
-test ?= benchmarks/median.riscv
-
 verilator_bin = verilator
 
 hw_dir = $(abspath .)
@@ -51,9 +49,6 @@ docker_image_name = cse548
 docker_cmd = docker run -v $(hw_dir):$(docker_hw_dir) -it $(docker_image_name)
 
 # simulation options
-# sim_opt = -p, show simulation
-sim_opt = "--vcd=$(out_dir)/ariane.vcd" #, store waveform in test.vcd
-
 default:
 	$(docker_cmd) /usr/bin/make -C $(docker_hw_dir) $(target)
 
@@ -68,6 +63,7 @@ $(out_dir)/ariane: $(ariane_dir)
 	$(verilator_bin) --trace --cc --exe -Wno-fatal --unroll-count 256 --Wall \
 	-CFLAGS "-I$(fesvr_dir) -std=c++11 -I${fesvr_dir}" \
 	-LDFLAGS "-L$(fesvr_dir)/install/lib -lfesvr" \
+	-DVTRACE \
 	-Mdir $(docker_out_dir) -o $@ --top-module $(ariane_top_module_name) +incdir+$(ariane_inc_dir) \
 	$(ariane_pkg_files) $(ariane_vfiles) $(ariane_cfiles)
 	cd $(docker_out_dir) && make -j -f V$(ariane_top_module_name).mk
@@ -79,17 +75,36 @@ $(ariane_dir):
 
 # riscv tests
 
-rvtests: $(out_dir)/rvtests
+test ?= benchmarks/median.riscv
 
-run_test: rvtests ariane
-	$(out_dir)/ariane $(sim_opt) $(out_dir)/rvtests/share/riscv-tests/$(test)
+bmarks = \
+median \
+dhrystone \
+multiply \
+pmp \
+towers \
+qsort \
+rsort \
+vvadd
 
-$(out_dir)/rvtests: $(rvtests_dir)
+run_benchmark: $(addsuffix .trace.dasm,$(addprefix $(out_dir)/,$(bmarks)))
+#run_benchmark: $(out_dir)/median.trace.dasm$(out_dir)/median.trace.dasm
+
+$(out_dir)/%.trace.dasm: build_benchmark ariane
+	$(out_dir)/ariane $(out_dir)/benchmark/$*.riscv
+	@cat $(out_dir)/ariane.trace.dasm | spike-dasm > $@
+
+# build just benchmarks and not isa-tests
+
+build_benchmark: $(out_dir)/benchmark
+
+$(out_dir)/benchmark: $(rvtests_dir)
 	cd $(rvtests_dir) && autoconf
 	mkdir -p $(rvtests_dir)/build
 	cd $(rvtests_dir)/build && $(rvtests_dir)/configure --prefix=$@
-	cd $(rvtests_dir)/build && make
-	cd $(rvtests_dir)/build && make install
+	cd $(rvtests_dir)/build && make benchmarks
+	cd $(rvtests_dir)/build && install -d $@
+	cd $(rvtests_dir)/build && install -p -m 644 `find benchmarks -maxdepth 1 -type f` $@
 
 $(rvtests_dir):
 	git clone https://github.com/riscv/riscv-tests.git $@
@@ -97,13 +112,21 @@ $(rvtests_dir):
 	git -C $@ submodule update --init --recursive
 
 # hello world
+
 CC = riscv64-unknown-elf-gcc
 OBJDUMP = riscv64-unknown-elf-objdump
 
-hello: $(out_dir)/hello.riscv
+build_hello: $(out_dir)/hello.riscv
 
-run_hello: hello ariane
+sim_opt = "--vcd=$(out_dir)/ariane.vcd" #, store waveform in test.vcd
+
+$(out_dir)/hello.trace.dasm: build_hello ariane
 	$(out_dir)/ariane $(sim_opt) $(out_dir)/hello.riscv
+	@cat $(out_dir)/ariane.trace.dasm | spike-dasm > $@
+
+run_hello: $(out_dir)/hello.trace.dasm
+
+trace_dasm: $(out_dir)/hello.trace.dasm
 
 $(out_dir)/hello.riscv: $(src_dir)/hello.c $(rvtests_dir)
 	mkdir -p $(dir $@)

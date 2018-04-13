@@ -8,3 +8,4 @@
 ## Homework
 
 1. [hw1a](https://bitbucket.org/taylor-bsg/cse548-18sp-hw/src/master/hw1/hw1a.md)
+1. [hw1b](https://bitbucket.org/taylor-bsg/cse548-18sp-hw/src/master/hw1/hw1b.md)

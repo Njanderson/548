@@ -743,38 +743,33 @@ module ariane #(
             it.close();
         end
     endprogram
-    // mock tracer for Verilator, to be used with spike-dasm
-    `else
+    `endif
+    `endif
 
-    string s;
+    `ifdef VTRACE
+    // mock tracer for Verilator, to be used with spike-dasm
     int f;
     logic [63:0] cycles;
 
     initial begin
-        f = $fopen("trace_core_00_0.dasm", "w");
+        f = $fopen("./out/ariane.trace.dasm", "w");
     end
 
-    always_ff @(posedge clk_i or negedge rst_ni) begin
-        if (~rst_ni) begin
+    always_ff @(posedge clk_i)
+        if (~rst_ni)
             cycles <= 0;
-        end else begin
-            if (commit_ack && !commit_stage_i.exception_o) begin
-                $fwrite(f, "%d 0x%0h (0x%h) DASM(%h)\n", cycles, commit_instr_id_commit.pc, commit_instr_id_commit.ex.tval[31:0], commit_instr_id_commit.ex.tval[31:0]);
-            end else if (commit_ack) begin
-                if (commit_instr_id_commit.ex.cause == 2) begin
-                    $fwrite(f, "Exception Cause: Illegal Instructions, DASM(%h)\n", commit_instr_id_commit.ex.tval[31:0]);
-                end else begin
-                    $fwrite(f, "Exception Cause: %5d\n", commit_instr_id_commit.ex.cause);
-                end
-            end
+	else
             cycles <= cycles + 1;
-        end
-    end
+
+    always_ff @(posedge clk_i)
+        if (rst_ni & commit_ack & ~ex_commit.valid)
+            $fwrite(f, "c:%08d pc:0x%h instr:0x%h DASM(%h)\n", cycles, commit_instr_id_commit.pc, commit_instr_id_commit.ex.tval[31:0], commit_instr_id_commit.ex.tval[31:0]);
+	else if (cycles != (cycles - 1))
+            $fwrite(f, "c:%08d no instruction to commit why?\n", cycles);
 
     final begin
         $fclose(f);
     end
     `endif
-    `endif
-endmodule // ariane
 
+endmodule // ariane
