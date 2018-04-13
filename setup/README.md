@@ -16,5 +16,5 @@
     * Run (in the cointainer) `exit`
 
 5. Remove unused images
-    * Read (this)[https://docs.docker.com/engine/reference/commandline/image_prune/] before pruning
+    * Read [this](https://docs.docker.com/engine/reference/commandline/image_prune/) before pruning
     * Run `make prune`
