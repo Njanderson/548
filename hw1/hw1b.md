@@ -22,7 +22,7 @@ In this homework, we are going to accomplish three goals:
 | qsort         | PASS    |
 | rsort         | PASS    |
 | vvadd         | PASS    |
-|---------------|---------|
+| ------------- | ------- |
 | spmv          | FAIL    |
 | mm            | FAIL    |
 | mt-matmul     | FAIL    |
