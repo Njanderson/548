@@ -36,5 +36,6 @@ In this homework, we are going to accomplish
     * .riscv files are binaries and .dump files are disassemble binary
 3. After running benchmarks or `make target=run_benchmark`, traces are located at `./out` folder under the .trace.dasm file extension
     * This trace file contains the retired instructions in the processor together with cycles(c) and program counter(pc)
+    * This trace is generated in [ariane.sv](https://bitbucket.org/taylor-bsg/cse548-18sp-hw/src/master/hw1/src/ariane.sv). Open file and search for `$fwrite`
 
 # Turnin using
