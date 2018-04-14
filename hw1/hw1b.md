@@ -69,11 +69,16 @@ else if (waw-hazard) // backend stall
 
 ## Infrastructure
 
-What we're asking you to do is not particularly easy, but hey, you're taking a UW grad quals class, and if you complete this assignment, the Ariane core is yours to control! But we're going to give
-some accelerators, based on Prof. Taylor and Super TA Luis's experience hacking processors.
+What we're asking you to do is not particularly easy, but hey, you're taking a UW grad quals class, and if you complete this assignment, you will understand Ariane very well, and the Ariane core will
+be yours to use and modify for any project you undertake. Strap on those superpowers!
+
+To speed you on your way, we're going to give some protips and infrastructure, based on Prof. Taylor and Super TA Luis's experience hacking processors and SystemVerilog:
 
 1. Ariane top file is now located at `src/ariane.sv` or [ariane.sv](https://bitbucket.org/taylor-bsg/cse548-18sp-hw/src/master/hw1/src/ariane.sv)
 2. [Profile Ariane with a Verilog Tracer](tracer.md)
+
+This allows you to run some code and see the pattern at which it commits instructions. 
+
 3. [Compile and run assembly code on Ariane](assembly.md)
 4. [Compile and run c code on Ariane](c.md)
 5. [Compile and run benchmarks on Ariane](benchmark.md)
