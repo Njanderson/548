@@ -27,9 +27,13 @@ code for the improved [Verilog Tracer](tracer.md)
         + The number of committed instructions (table-name:ci)
         + The number of cycles without committing instructions (table-name:no-ci)
         
+        
+        
     * Frontend stalls and efficiency:
         + The number of stalls due to no-valid instructions in the instruction decode (ID) stage (table-name:id-stall)
         + The number of mispredicts for every 1000 committed instructions (miss per kilo insturctions) (table-name:mpki) 
+        
+        
         
     * Middle-end stalls:
         + The number of stalls due to no-space in the scoreboard (NR_SB_ENTRIES) (table-name:sb-stall)
