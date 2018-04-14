@@ -11,10 +11,11 @@ crash_backward:
 test_start:
 
 program:
-	la x31, xreg_init_data
-	ld x0, 0(x31)
-	ld x1, 8(x31)
-	add x2, x0, x1
+	lui a0, 0xdead // help identify start of block
+	li a1, 23
+	li a2, 10
+	add a3, a1, a2
+	lui a0, 0xbeef // help identify end of block
 	j test_end
 
 crash_forward:
@@ -24,14 +25,6 @@ test_end:
 	RVTEST_PASS
 
 RVTEST_CODE_END
-
-	.data
-
-hidden_data:
-	.align 8
-xreg_init_data:
-reg_x0_init:	.dword 0x000000000000beef
-reg_x1_init:	.dword 0x0000000000000001
 
 RVTEST_DATA_BEGIN
 RVTEST_DATA_END
