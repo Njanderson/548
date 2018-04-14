@@ -3,7 +3,7 @@
 In this homework, we are going to figure out how good an implementation of an in-order core Ariane is,
 and also identify opportunities for optimization, by writing a profiler.
 
-To write the profiler, we will insert instrumentation code in SystemVerilog at the top level in order to profile Ariane and find sources of inefficiency.
+To write the profiler, **you and a partner** will insert instrumentation code in SystemVerilog at the top level in order to profile Ariane and find sources of inefficiency.
 
 In a single-issue in-order processor, ideal performance is **one instruction per cycle**. Anything less than that corresponds to some kind of stall condition in the processor.
 We can address those stalls by improving the code, or 
