@@ -33,3 +33,29 @@ The Verilog Tracer code is:
         $fclose(f);
     end
 ```
+
+A sample trace for this baseline implementation Verilog Tracer is:
+
+
+```
+cycle:00004156 pc:0x000000008000142e instruction:0x0017e793 ori     a5, a5, 1
+cycle:00004157 no instruction to commit why?
+cycle:00004158 no instruction to commit why?
+cycle:00004159 pc:0x0000000080001432 instruction:0x00000717 auipc   a4, 0x0
+cycle:00004160 no instruction to commit why?
+cycle:00004161 no instruction to commit why?
+cycle:00004162 pc:0x0000000080001436 instruction:0xbcf73723 sd      a5, -1074(a4)
+cycle:00004163 pc:0x000000008000143a instruction:0x0000006f j       pc + 0x0
+cycle:00004164 no instruction to commit why?
+cycle:00004165 no instruction to commit why?
+cycle:00004166 no instruction to commit why?
+cycle:00004167 pc:0x000000008000143a instruction:0x0000006f j       pc + 0x0
+cycle:00004168 no instruction to commit why?
+cycle:00004169 no instruction to commit why?
+cycle:00004170 no instruction to commit why?
+cycle:00004171 no instruction to commit why?
+cycle:00004172 no instruction to commit why?
+cycle:00004173 no instruction to commit why?
+cycle:00004174 pc:0x000000008000143a instruction:0x0000006f j       pc + 0x0
+cycle:00004175 no instruction to commit why?
+```
