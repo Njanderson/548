@@ -68,6 +68,8 @@ Rebuild the Docker image
 3. [Compile and run assembly code on Ariane](assembly.md)
 4. [Compile and run c code on Ariane](c.md)
 5. [Compile and run benchmarks on Ariane](benchmark.md)
+6. [RISC-V reference card](https://www.cl.cam.ac.uk/teaching/1617/ECAD+Arch/files/docs/RISCVGreenCardv8-20151013.pdf)
+7. [RISC-V Assembly Programmer's Manual](https://github.com/riscv/riscv-asm-manual/blob/master/riscv-asm.md)
 
 ## Turnin using Canvas
 
