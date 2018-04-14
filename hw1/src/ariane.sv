@@ -763,9 +763,13 @@ module ariane #(
 
     always_ff @(posedge clk_i)
         if (rst_ni & commit_ack & ~ex_commit.valid)
-            $fwrite(f, "c:%08d pc:0x%h instr:0x%h DASM(%h)\n", cycles, commit_instr_id_commit.pc, commit_instr_id_commit.ex.tval[31:0], commit_instr_id_commit.ex.tval[31:0]);
+            $fwrite(f, "cycle:%08d pc:0x%h instruction:0x%h DASM(%h)\n", cycles, commit_instr_id_commit.pc, commit_instr_id_commit.ex.tval[31:0], commit_instr_id_commit.ex.tval[31:0]);
         else if (cycles != (cycles - 1))
-            $fwrite(f, "c:%08d no instruction to commit why?\n", cycles);
+            $fwrite(f, "cycle:%08d no instruction to commit why?\n", cycles);
+
+    // BEGIN your answer h1wb
+
+    // END your answer h1wb
 
     final begin
         $fclose(f);
