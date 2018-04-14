@@ -8,7 +8,7 @@ for the benchmark suite available in [riscv-tests](https://github.com/riscv/risc
 * The modified version of the [Ariane](https://bitbucket.org/taylor-bsg/cse548-18sp-hw/src/master/hw1/src/ariane.sv) top file, containing the
 code for the improved [Verilog Tracer](tracer.md)
 
-* A pdf file with a table containing the following information obtained with the new version of the Verilog Tracer
+* A ASCII file with a table containing the following information obtained with the new version of the Verilog Tracer
 
 | Benchmark | event-count-1 | event-count-2 | event-count-..| event-count-N |
 |-----------|---------------|---------------|---------------|---------------|
@@ -28,20 +28,20 @@ code for the improved [Verilog Tracer](tracer.md)
         + The total number of cycles (table-name:total) 
 
         
-    2. Frontend stalls and efficiency:
-        1. The number of stalls due to no-valid instructions in the instruction decode (ID) stage (table-name:id-stall)
-        2. The number of mispredicts for every 1000 committed instructions (miss per kilo insturctions) (table-name:mpki) 
+    * Frontend stalls and efficiency:
+        + The number of stalls due to no-valid instructions in the instruction decode (ID) stage (table-name:id-stall)
+        + The number of mispredicts for every 1000 committed instructions (miss per kilo insturctions) (table-name:mpki) 
         
-    3. Middle-end stalls:
-        2. The number of stalls due to no-space in the scoreboard (NR_SB_ENTRIES) (table-name:sb-stall)
-        3. The number of stalls due to an unresolved branch (table-name:br-stall)
-        4. The number of exceptions or instructions-that-not-use-functional-units (table-name:exfu)
+    * Middle-end stalls:
+        + The number of stalls due to no-space in the scoreboard (NR_SB_ENTRIES) (table-name:sb-stall)
+        + The number of stalls due to an unresolved branch (table-name:br-stall)
+        + The number of exceptions or instructions-that-not-use-functional-units (table-name:exfu)
 
 
-    4. Backend stalls:
-        1. The number of stalls due to unavailable operands in the issue-stage (table-name:operand-stall)
-        2. The number of stalls due to target functional unit busy (table-name:fu-busy-stall)
-        3. The number of stalls due to WAW hazerds (table-name:waw-stall)
+    * Backend stalls:
+        + The number of stalls due to unavailable operands in the issue-stage (table-name:operand-stall)
+        + The number of stalls due to target functional unit busy (table-name:fu-busy-stall)
+        + The number of stalls due to WAW hazerds (table-name:waw-stall)
 
 Multiple events related to frontend and backend stalls can happen at the same time, therefore we would want to count them
 properly. For example, a frontend stall has precedence over backend stalls. Therefore, we created a pseudocode that
