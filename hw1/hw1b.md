@@ -78,6 +78,9 @@ else if (waw-hazard) // backend stall
     stall-reason = waw-stall
 ```
 
+But this code has some deficiencies. For example, it does not differentiate between delays from a data cache miss and just data cache latency. Similarly it does not differentiate between icache miss stalls and branch taken or branch mispredict stalls.
+Extra brownie points if you figure these out.
+
 ## Infrastructure
 
 What we're asking you to do is not particularly easy, but hey, you're taking a UW grad quals class, and when you complete this assignment, you will understand Ariane very well, and the Ariane core will
