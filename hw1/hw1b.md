@@ -12,7 +12,7 @@ Then after this is done, you will run the profiler on the benchmark suite availa
 ## Turnin using Canvas
 
 * The modified version of the [Ariane](https://bitbucket.org/taylor-bsg/cse548-18sp-hw/src/master/hw1/src/ariane.sv) top file, containing your
-instrumentation code. See the [Verilog Tracer](tracer.md) code for an example.
+instrumentation code. See the [Verilog Tracer](tracer.md) code for an example. You will
 
 * The assembly tests for testing individual stall conditions. Place a comment at the top of the test indicating which stall condition you are testing. You should also explain the rational for the particular stall condition.
 
