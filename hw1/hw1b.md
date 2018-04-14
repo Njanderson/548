@@ -1,7 +1,7 @@
 # Profile Ariane
 
 In this homework, we are going to profile Ariane and find sources of inefficiencies (stalls)
-for the benchmark suite provided by [riscv-tests](https://github.com/riscv/riscv-tests)
+for the benchmark suite available in [riscv-tests](https://github.com/riscv/riscv-tests)
 
 ## Turnin using Canvas
 
@@ -20,9 +20,14 @@ code for the improved [Verilog Tracer](tracer.md)
 | rsort     | | | |
 | vvadd     | | | |
 
+3. 
+
 ## Setup
 
 Rebuild the Docker image
+
+1. Go to [setup](https://bitbucket.org/taylor-bsg/cse548-18sp-hw/src/master/setup/) folder
+2. Run `make`
 
 ## Helpers for the homework
 
