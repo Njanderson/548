@@ -27,16 +27,15 @@ code for the improved [Verilog Tracer](tracer.md)
         + The number of committed instructions (table-name:ci)
         + The number of cycles without committing instructions (table-name:no-ci)
     * Frontend stalls and efficiency:
-        + The number of stalls due to no-valid instructions in the instruction decode (ID) stage (table-name:id-stall)
+        + The number of stalls due to no-valid instructions in the instruction decode (ID) stage (table-name:frontend-stall)
         + The number of mispredicts for every 1000 committed instructions (miss per kilo insturctions) (table-name:mpki)
     * Middle-end stalls:
         + The number of stalls due to no-space in the scoreboard (NR_SB_ENTRIES) (table-name:sb-stall)
         + The number of stalls due to an unresolved branch (table-name:br-stall)
-        + The number of exceptions or instructions-that-not-use-functional-units (table-name:exfu)
+        + The number of exceptions or instructions-that-dont-use-functional-units (table-name:exfu)
     * Backend stalls:
-
         + The number of stalls due to unavailable operands in the issue-stage (table-name:operand-stall)
-        + The number of stalls due to target functional unit busy (table-name:fu-busy-stall)
+        + The number of stalls due to functional unit <name> busy (table-name:fu-<name>-busy-stall)
         + The number of stalls due to WAW hazerds (table-name:waw-stall)
 
 Multiple events related to frontend and backend stalls can happen at the same time, therefore we would want to count them
