@@ -86,7 +86,7 @@ To speed you on your way, we're going to give some protips and infrastructure, b
     This a starting place for understanding the behavior of the processor,
     before you have written any instrumentation coe, and will help you hunt for stall conditions to incorporate in your profiler. The commit stage is nice because it is very
     concrete and easy to observe. But the challenge is, it is a little too late in the processor to help you say *why* the processor did not commit on a particular cycle. The stall reason could have
-    happened a hundred cycles ago.
+    happened a hundred cycles ago. Also, this is good sample code to see how you instrument the top-level of the core.
 
 5. Make commands for disassembling your RISC-V binaries.
 6. [Compile and run assembly code on Ariane](assembly.md)
