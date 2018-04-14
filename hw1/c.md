@@ -4,7 +4,7 @@
 2. Disassemble binary by `make target=riscv_dasm`
 3. Disassemble file is located at `./out/hello.riscv.dasm`
 
-In case you want to compile another source-file:
+In case you want to compile another c-source-file:
 
 1. Place file in the `src` folder
 2. Open [Makefile](https://bitbucket.org/taylor-bsg/cse548-18sp-hw/src/master/hw1/Makefile)
