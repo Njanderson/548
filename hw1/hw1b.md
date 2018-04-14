@@ -10,15 +10,15 @@ code for the improved [Verilog Tracer](tracer.md)
 
 2. A table in a pdf file containing the following information obtained with the new version of the Verilog Tracer
 
-| Benchmark |    reason-1  |  reason-2 |
-|----------|-------------|----------|
-| median | | |
-| dhrystone | | |
-| multiply | | |
-| towers | | |
-| qsort | | |
-| rsort | | |
-| vvadd | | |
+| Benchmark | reason-1 | reason-2 | reason-N |
+|-----------|----------|----------|----------|
+| median    | | | |
+| dhrystone | | | |
+| multiply  | | | |
+| towers    | | | |
+| qsort     | | | |
+| rsort     | | | |
+| vvadd     | | | |
 
 ## Setup
 
