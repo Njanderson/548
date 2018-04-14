@@ -114,18 +114,18 @@ OBJDUMP = riscv64-unknown-elf-objdump
 
 # compile and run from C source
 
-test_c = hello
+c_name = hello
 
 # store waveform in test.vcd, uncomment sim_opt if you need  it
 # sim_opt = "--vcd=$(out_dir)/ariane.vcd"
 
-run_c: $(out_dir)/$(test_c).trace.dasm
+run_c: $(out_dir)/$(c_name).trace.dasm
 
 $(out_dir)/%.trace.dasm: $(out_dir)/%.riscv ariane
 	$(out_dir)/ariane $(sim_opt) $<
 	@cat $(out_dir)/ariane.trace.dasm | spike-dasm > $@
 
-build_c: $(out_dir)/$(test_c).riscv
+build_c: $(out_dir)/$(c_name).riscv
 
 $(out_dir)/%.riscv: $(src_dir)/%.c $(rvtests_dir)
 	mkdir -p $(dir $@)
@@ -135,28 +135,32 @@ $(out_dir)/%.riscv: $(src_dir)/%.c $(rvtests_dir)
 	$(rvtests_dir)/benchmarks/common/crt.S  -nostartfiles -lm -lgcc \
 	-T $(rvtests_dir)/benchmarks/common/test.ld -o $@ $<
 
-riscv_dasm: $(out_dir)/$(test_c).riscv.dasm
-
-$(out_dir)/%.riscv.dasm: $(out_dir)/%.riscv
-	$(OBJDUMP) --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.data $< > $@
-
 # compile and run from asm source
 
-test_asm = simple
+asm_name = simple
 
-run_asm: $(out_dir)/$(test_asm).S.trace.dasm
+run_asm: $(out_dir)/$(asm_name).S.trace.dasm
 
 $(out_dir)/%.S.trace.dasm: $(out_dir)/%.S.riscv ariane
 	$(out_dir)/ariane $(sim_opt) $<
 	@cat $(out_dir)/ariane.trace.dasm | spike-dasm > $@
 
-build_asm: $(out_dir)/$(test_asm).S.riscv
+build_asm: $(out_dir)/$(asm_name).S.riscv
 
 $(out_dir)/%.S.riscv: $(src_dir)/%.S $(ariane_dir)
 	mkdir -p $(dir $@)
 	$(CC) -nostdlib -nostartfiles -Wa,-march=rv64i \
 	-I$(ariane_dir)/riscv-torture/env/p \
 	-T$(ariane_dir)/riscv-torture/env/p/link.ld $< -o $@
+
+# disassemble
+
+dasm_name = hello
+
+riscv_dasm: $(out_dir)/$(dasm_name).riscv.dasm
+
+$(out_dir)/%.riscv.dasm: $(out_dir)/%.riscv
+	$(OBJDUMP) --disassemble-all --disassemble-zeroes --section=.text --section=.data --section=.bss $< > $@
 
 clean:
 	$(docker_cmd) /bin/rm -rf $(docker_out_dir)
