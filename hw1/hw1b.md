@@ -22,10 +22,10 @@ code for the improved [Verilog Tracer](tracer.md)
 
 * The events we are interested in are:
 
-    1. Global
-        1. The number of committed instructions (table-name:ci)
-        2. The number of cycles without committing instructions (table-name:no-ci)
-        3. The total number of cycles (table-name:total) 
+    * Global
+        + The number of committed instructions (table-name:ci)
+        + The number of cycles without committing instructions (table-name:no-ci)
+        + The total number of cycles (table-name:total) 
 
         
     2. Frontend stalls and efficiency:
