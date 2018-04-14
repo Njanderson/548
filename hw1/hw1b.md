@@ -28,12 +28,12 @@ Then after this is done, you will run the profiler on the benchmark suite availa
         + The number of stalls due to WAW hazerds (table-name:waw-stall)
 
 
+In simple pipelines, it is easy to attribute a stall to a particular root cause. But in more advanced pipelines (such as Ariane), the pipeline may overlap stalls that are happening from different instruction in time. 
+This forces us to abandon the notion that if we reduce the number of a particular type of stall, that we will necessarily see a decrease in total stalls. Eliminating one class of stall may just cause other stalls to appear.
+
 We loosely attribute the sources of stalls in the Ariane pipeline to being frontend stalls, middle-end stalls, and backend stalls. Front end stalls are those associated with fetching instructions; 
 e.g. branch mispredict latencies, instruction cache misses, i-tlb misses, etc. Middle-end stalls are related to the control logic that schedules instructions. Back-end stalls are related to delays in actually executing instructions; 
 i.e. a data cache stall, or a stall due to an iterative divider being busy.
-
-In simple pipelines, it is easy to attribute a stall to a particular root cause. But in more advanced pipelines (such as Ariane), the pipeline may overlap stalls that are happening from different instruction in time. 
-This forces us to abandon the notion that if we reduce the number of a particular type of stall, that we will necessarily see a decrease in total stalls. Eliminating one class of stall may just cause other stalls to appear.
 
 But in all pipelines, some stalls will actually free other parts of the pipeline and cause them to also stall. For example, in the traditional 5-stage pipeline, a data cache stall will freeze the front end of the processor
 preventing it from filling empty pipeline stages. In this case, when attributing a stall, we should prefer to attribute a stall to the data cache over the front end of the pipeline, since the data cache may be freezing the front end and preventing it from doing work.
