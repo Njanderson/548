@@ -18,7 +18,7 @@ vvadd
 
 * How can I run a single benchmark, for example towers?
 
-1. Open [Makefile](https://bitbucket.org/taylor-bsg/cse548-18sp-hw/src/master/hw1/Makefile)
-2. Edit the bmarks variable as `bmarks=towers`
-3. Run `make clean`
-4. Run `make target=run_benchmark`
+    1. Open [Makefile](https://bitbucket.org/taylor-bsg/cse548-18sp-hw/src/master/hw1/Makefile)
+    2. Edit the bmarks variable as `bmarks=towers`
+    3. Run `make clean`
+    4. Run `make target=run_benchmark`
