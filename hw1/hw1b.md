@@ -67,6 +67,19 @@ else if (waw-hazard) // backend stall
     stall-reason = waw-stall
 ```
 
+## Infrastructure
+
+What we're asking you to do is not particularly easy, but hey, you're taking a UW grad quals class, and if you complete this assignment, the Ariane core is yours to control! But we're going to give
+some accelerators, based on Prof. Taylor and Super TA Luis's experience hacking processors.
+
+1. Ariane top file is now located at `src/ariane.sv` or [ariane.sv](https://bitbucket.org/taylor-bsg/cse548-18sp-hw/src/master/hw1/src/ariane.sv)
+2. [Profile Ariane with a Verilog Tracer](tracer.md)
+3. [Compile and run assembly code on Ariane](assembly.md)
+4. [Compile and run c code on Ariane](c.md)
+5. [Compile and run benchmarks on Ariane](benchmark.md)
+6. [RISC-V reference card](https://www.cl.cam.ac.uk/teaching/1617/ECAD+Arch/files/docs/RISCVGreenCardv8-20151013.pdf)
+7. [RISC-V Assembly Programmer's Manual](https://github.com/riscv/riscv-asm-manual/blob/master/riscv-asm.md)
+
 
 
 ## Setup
@@ -76,15 +89,6 @@ Rebuild the Docker image
 1. Go to [setup](https://bitbucket.org/taylor-bsg/cse548-18sp-hw/src/master/setup/) folder
 2. Run `make`
 
-## Helpers for the homework
-
-1. Ariane top file is now located at `src/ariane.sv` or [ariane.sv](https://bitbucket.org/taylor-bsg/cse548-18sp-hw/src/master/hw1/src/ariane.sv)
-2. [Profile Ariane with a Verilog Tracer](tracer.md)
-3. [Compile and run assembly code on Ariane](assembly.md)
-4. [Compile and run c code on Ariane](c.md)
-5. [Compile and run benchmarks on Ariane](benchmark.md)
-6. [RISC-V reference card](https://www.cl.cam.ac.uk/teaching/1617/ECAD+Arch/files/docs/RISCVGreenCardv8-20151013.pdf)
-7. [RISC-V Assembly Programmer's Manual](https://github.com/riscv/riscv-asm-manual/blob/master/riscv-asm.md)
 
 ## Turnin using Canvas
 
