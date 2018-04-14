@@ -143,3 +143,26 @@ instrumentation code. See the [Verilog Tracer](tracer.md) code for an example.
 
 This table will contain the data for both your tests and for the benchmarks. Each type of stall should have a specific test that exercises that stall, and it should be evident from the above data that you have written a good test that
 really hammers on this stall condition!
+
+## Code Tips
+
+Here are some interesting lines of code that we used to derive the initial prioritization of stalls.
+
+```
+// issue_read_operands.sv
+    stall line:179            // whether the instructions operands are available
+    issue_instr_i.fu line:157 // which functional unit is used
+    fu_busy line:157          // whether the functional unit is busy
+
+
+    issue_ack_o line:118 // whether the instruction is issued
+      (issue_instr_valid_i) // from scoreboard.sv line:85-86
+      AND ((input-operand-available AND target-fu-not-busy AND not-WAW-hazard)
+            OR (exception)
+            OR (instruction-not-use-fu))
+       
+// scoreboard.sv line:85-86
+    issue_instr_valid_o  = decoded_instr_valid_i && !unresolved_branch_i && !issue_full;
+    decoded_instr_ack_o    = issue_ack_i && !issue_full;
+```
+ 
