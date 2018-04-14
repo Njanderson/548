@@ -1,6 +1,6 @@
 # Profile Ariane
 
-In this homework, we are going to profile Ariane and found sources of inefficiencies (stalls)
+In this homework, we are going to profile Ariane and find sources of inefficiencies (stalls)
 for the benchmark suite provided in [riscv-tests](https://github.com/riscv/riscv-tests)
 
 ## Problem
@@ -8,8 +8,8 @@ for the benchmark suite provided in [riscv-tests](https://github.com/riscv/riscv
 ## Setup
 
 Rebuild the Docker image again
-    * `cd ../setup`
-	* `make`
+    * Go to setup folder `cd ../setup`
+	* Run `make`
 
 ## Important information
 
