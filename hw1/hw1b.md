@@ -82,14 +82,16 @@ To speed you on your way, we're going to give some protips and infrastructure, b
 
 4. [Profile Ariane with a Verilog Tracer](tracer.md)
 
-    This allows you to run some code and see what the commit stage (the very last stage!) is doing each cycle -- which PC is committing. This a starting place for understanding the behavior of the processor,
+    This allows you to run some code and see on what cycles instruction commits (in the very last stage of execution!) and what the PC and dissasembly of the instruction is. 
+    This a starting place for understanding the behavior of the processor,
     before you have written any instrumentation coe, and will help you hunt for stall conditions to incorporate in your profiler. The commit stage is nice because it is very
     concrete and easy to observe. But the challenge is, it is a little too late in the processor to help you say *why* the processor did not commit on a particular cycle. The stall reason could have
     happened a hundred cycles ago.
 
-5. [Compile and run assembly code on Ariane](assembly.md)
-6. [RISC-V reference card](https://www.cl.cam.ac.uk/teaching/1617/ECAD+Arch/files/docs/RISCVGreenCardv8-20151013.pdf)
-7. [RISC-V Assembly Programmer's Manual](https://github.com/riscv/riscv-asm-manual/blob/master/riscv-asm.md)
+5. Make commands for disassembling your RISC-V binaries.
+6. [Compile and run assembly code on Ariane](assembly.md)
+7. [RISC-V reference card](https://www.cl.cam.ac.uk/teaching/1617/ECAD+Arch/files/docs/RISCVGreenCardv8-20151013.pdf)
+8. [RISC-V Assembly Programmer's Manual](https://github.com/riscv/riscv-asm-manual/blob/master/riscv-asm.md)
 
     For writing your test programs to start isolating and reproducing stalls. You can observe with the tracer program delays in commits,
     and insert SystemVerilog at the top level to start counting stalls.
