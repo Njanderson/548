@@ -119,7 +119,7 @@ instrumentation code. See the [Verilog Tracer](tracer.md) code for an example.
 
 * You should have an explanation of the stall conditions you detect and explain the rules you developed for stall attribution, and justify them.
 
-* The assembly tests for testing individual stall conditions. Place a comment at the top of the test indicating which stall condition you are testing. You should also explain the rational for how the code executes that particular stall condition.
+* The assembly tests for testing individual stall conditions. Place a comment at the top of the test indicating which stall condition you are testing. Comments should also explain the rational for how the code executes that particular stall condition.
 
 * An ASCII file with a table containing the following information obtained with your instrumentation code.
 
