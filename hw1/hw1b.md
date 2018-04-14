@@ -23,10 +23,9 @@ code for the improved [Verilog Tracer](tracer.md)
 * The events we are interested in are:
 
     * Global
+        + The total number of cycles (table-name:total) 
         + The number of committed instructions (table-name:ci)
         + The number of cycles without committing instructions (table-name:no-ci)
-        + The total number of cycles (table-name:total) 
-
         
     * Frontend stalls and efficiency:
         + The number of stalls due to no-valid instructions in the instruction decode (ID) stage (table-name:id-stall)
