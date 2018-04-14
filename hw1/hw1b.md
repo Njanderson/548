@@ -78,7 +78,7 @@ To speed you on your way, we're going to give some protips and infrastructure, b
 2. [Compile and run c code on Ariane](c.md)
 3. [Compile and run benchmarks on Ariane](benchmark.md)
 
-    This will allow you to run some larger test programs, and also to finish the assignment.
+    This will allow you to run some larger test programs, and also to run the final phase of the assignment.
 
 4. [Profile Ariane with a Verilog Tracer](tracer.md)
 
