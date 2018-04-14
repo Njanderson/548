@@ -103,7 +103,7 @@ To speed you on your way, we're going to give some protips and infrastructure, b
     concrete and easy to observe. But the challenge is, it is a little too late in the processor to help you say *why* the processor did not commit on a particular cycle. The stall reason could have
     happened a hundred cycles ago. Also, this is good sample code to see how you instrument the top-level of the core.
 
-5. Disassembling your RISC-V binaries.
+5. [Disassembling your RISC-V binaries](disassemble.md)
 6. [Compile and run assembly code on Ariane](assembly.md)
 7. [RISC-V reference card](https://www.cl.cam.ac.uk/teaching/1617/ECAD+Arch/files/docs/RISCVGreenCardv8-20151013.pdf)
 8. [RISC-V Assembly Programmer's Manual](https://github.com/riscv/riscv-asm-manual/blob/master/riscv-asm.md)
