@@ -9,36 +9,6 @@ the Ariane pipeline better.
 
 Then after this is done, you will run the profiler on the benchmark suite available in [riscv-tests] (See https://github.com/riscv/riscv-tests).
 
-## Turnin using Canvas
-
-* The modified version of the [Ariane](https://bitbucket.org/taylor-bsg/cse548-18sp-hw/src/master/hw1/src/ariane.sv) top file, containing your
-instrumentation code. See the [Verilog Tracer](tracer.md) code for an example. You will
-
-* The assembly tests for testing individual stall conditions. Place a comment at the top of the test indicating which stall condition you are testing. You should also explain the rational for how the code executes that particular stall condition.
-
-* An ASCII file with a table containing the following information obtained with your instrumentation code.
-
-| Benchmark | event-count-1 | event-count-2 | event-count-..| event-count-N |
-|-----------|---------------|---------------|---------------|---------------|
-| test_1    | | | |
-| test_2    | | | |
-| test_3    | | | |
-| test_4    | | | |
-| test_5    | | | |
-| test_6    | | | |
-| test_..   | | | |
-| test_N    | | | |
-| median    | | | |
-| dhrystone | | | |
-| multiply  | | | |
-| towers    | | | |
-| qsort     | | | |
-| rsort     | | | |
-| vvadd     | | | |
-
-This table will contain the data for both your tests and for the benchmarks. Each type of stall should have a specific test that exercises that stall, and it should be evident from the above data that you have written a good test that
-really hammers on this stall condition!
-
 * The events we are interested in are:
 
     * Global
@@ -82,6 +52,8 @@ else if (waw-hazard) // backend stall
     stall-reason = waw-stall
 ```
 
+
+
 ## Setup
 
 Rebuild the Docker image
@@ -96,3 +68,33 @@ Rebuild the Docker image
 3. [Compile and run assembly code on Ariane](assembly.md)
 4. [Compile and run c code on Ariane](c.md)
 5. [Compile and run benchmarks on Ariane](benchmark.md)
+
+## Turnin using Canvas
+
+* The modified version of the [Ariane](https://bitbucket.org/taylor-bsg/cse548-18sp-hw/src/master/hw1/src/ariane.sv) top file, containing your
+instrumentation code. See the [Verilog Tracer](tracer.md) code for an example. You will
+
+* The assembly tests for testing individual stall conditions. Place a comment at the top of the test indicating which stall condition you are testing. You should also explain the rational for how the code executes that particular stall condition.
+
+* An ASCII file with a table containing the following information obtained with your instrumentation code.
+
+| Benchmark | event-count-1 | event-count-2 | event-count-..| event-count-N |
+|-----------|---------------|---------------|---------------|---------------|
+| test_1    | | | |
+| test_2    | | | |
+| test_3    | | | |
+| test_4    | | | |
+| test_5    | | | |
+| test_6    | | | |
+| test_..   | | | |
+| test_N    | | | |
+| median    | | | |
+| dhrystone | | | |
+| multiply  | | | |
+| towers    | | | |
+| qsort     | | | |
+| rsort     | | | |
+| vvadd     | | | |
+
+This table will contain the data for both your tests and for the benchmarks. Each type of stall should have a specific test that exercises that stall, and it should be evident from the above data that you have written a good test that
+really hammers on this stall condition!
