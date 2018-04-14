@@ -43,9 +43,7 @@ Moreover, we must be aware that in advanced pipelines (such as Ariane), the pipe
 This forces us to abandon the notion that if we reduce the number of a particular type of stall, that we will necessarily see a decrease in total stalls. 
 Eliminating one class of stall may just cause other stalls to be unmasked.
 
-Multiple events related to frontend and backend stalls can happen at the same time, therefore we would want to count them
-properly. For example, a frontend stall has precedence over backend stalls. Therefore, we created a pseudocode that
-will allow you to make this count right.
+Below we have written some pseudo code for what we think the stall-attribution calculation should be. But this is just a starting place -- we may be wrong!
 
 ```
 if (no-valid-instruction-id-stage) // frontend stall
