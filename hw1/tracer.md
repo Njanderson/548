@@ -59,3 +59,7 @@ cycle:00004173 no instruction to commit why?
 cycle:00004174 pc:0x000000008000143a instruction:0x0000006f j       pc + 0x0
 cycle:00004175 no instruction to commit why?
 ```
+
+Signals can be monitored down in the hierarchy without passing wires through the modules and using instances names instead.
+For example, if one wants to probe the `flush_dcache` signal inside the controller, then one should
+use `controller_i.flush_dcache` from `ariane.sv`
