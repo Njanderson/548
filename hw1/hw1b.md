@@ -33,8 +33,6 @@ code for the improved [Verilog Tracer](tracer.md)
         + The number of stalls due to no-space in the scoreboard (NR_SB_ENTRIES) (table-name:sb-stall)
         + The number of stalls due to an unresolved branch (table-name:br-stall)
         + The number of exceptions or instructions-that-not-use-functional-units (table-name:exfu)
-
-
     * Backend stalls:
         + The number of stalls due to unavailable operands in the issue-stage (table-name:operand-stall)
         + The number of stalls due to target functional unit busy (table-name:fu-busy-stall)
