@@ -10,8 +10,8 @@ code for the improved [Verilog Tracer](tracer.md)
 
 * A pdf file with a table containing the following information obtained with the new version of the Verilog Tracer
 
-| Benchmark | event-count-1 | event-count-2 | event-count-N |
-|-----------|---------------|---------------|---------------|
+| Benchmark | event-count-1 | event-count-2 | event-count-..| event-count-N |
+|-----------|---------------|---------------|---------------|---------------|
 | median    | | | |
 | dhrystone | | | |
 | multiply  | | | |
