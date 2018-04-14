@@ -77,7 +77,7 @@ To speed you on your way, we're going to give some protips and infrastructure, b
 1. Ariane top file is now located at `src/ariane.sv` or [ariane.sv](https://bitbucket.org/taylor-bsg/cse548-18sp-hw/src/master/hw1/src/ariane.sv)
 2. [Profile Ariane with a Verilog Tracer](tracer.md)
 
-This allows you to run some code and see the pattern at which it commits instructions. 
+    This allows you to run some code and see the pattern at which it commits instructions. 
 
 3. [Compile and run assembly code on Ariane](assembly.md)
 4. [Compile and run c code on Ariane](c.md)
