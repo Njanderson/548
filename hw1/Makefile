@@ -86,10 +86,10 @@ qsort \
 rsort \
 vvadd
 
-run_benchmark: $(addsuffix .trace.dasm,$(addprefix $(out_dir)/,$(bmarks)))
+run_benchmark: $(addsuffix .bmark.trace.dasm,$(addprefix $(out_dir)/,$(bmarks)))
 #run_benchmark: $(out_dir)/median.trace.dasm$(out_dir)/median.trace.dasm
 
-$(out_dir)/%.trace.dasm: build_benchmark ariane
+$(out_dir)/%.bmark.trace.dasm: build_benchmark ariane
 	$(out_dir)/ariane $(out_dir)/benchmark/$*.riscv
 	@cat $(out_dir)/ariane.trace.dasm | spike-dasm > $@
 
@@ -119,13 +119,11 @@ build_hello: $(out_dir)/hello.riscv
 
 sim_opt = "--vcd=$(out_dir)/ariane.vcd" #, store waveform in test.vcd
 
+run_hello: $(out_dir)/hello.trace.dasm
+
 $(out_dir)/hello.trace.dasm: build_hello ariane
 	$(out_dir)/ariane $(sim_opt) $(out_dir)/hello.riscv
 	@cat $(out_dir)/ariane.trace.dasm | spike-dasm > $@
-
-run_hello: $(out_dir)/hello.trace.dasm
-
-trace_dasm: $(out_dir)/hello.trace.dasm
 
 $(out_dir)/hello.riscv: $(src_dir)/hello.c $(rvtests_dir)
 	mkdir -p $(dir $@)
