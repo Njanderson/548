@@ -107,10 +107,12 @@ $(rvtests_dir):
 	git -C $@ checkout $(rvtests_ver) -b cse548
 	git -C $@ submodule update --init --recursive
 
-# compile and run from C source
+# compiler variables
 
 CC = riscv64-unknown-elf-gcc
 OBJDUMP = riscv64-unknown-elf-objdump
+
+# compile and run from C source
 
 test_c = hello
 
@@ -137,6 +139,24 @@ riscv_dasm: $(out_dir)/$(test_c).riscv.dasm
 
 $(out_dir)/%.riscv.dasm: $(out_dir)/%.riscv
 	$(OBJDUMP) --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.data $< > $@
+
+# compile and run from asm source
+
+test_asm = simple
+
+run_asm: $(out_dir)/$(test_asm).S.trace.dasm
+
+$(out_dir)/%.S.trace.dasm: $(out_dir)/%.S.riscv ariane
+	$(out_dir)/ariane $(sim_opt) $<
+	@cat $(out_dir)/ariane.trace.dasm | spike-dasm > $@
+
+build_asm: $(out_dir)/$(test_asm).S.riscv
+
+$(out_dir)/%.S.riscv: $(src_dir)/%.S $(ariane_dir)
+	mkdir -p $(dir $@)
+	$(CC) -nostdlib -nostartfiles -Wa,-march=rv64i \
+	-I$(ariane_dir)/riscv-torture/env/p \
+	-T$(ariane_dir)/riscv-torture/env/p/link.ld $< -o $@
 
 clean:
 	$(docker_cmd) /bin/rm -rf $(docker_out_dir)
