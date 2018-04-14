@@ -10,8 +10,4 @@ RTL-implementation and generate a binary for simulation.
 
 ## Test
 
-### [hello-world](https://bitbucket.org/taylor-bsg/cse548-18sp-hw/src/master/hw1/src/hello.c)
-
-* Build and run hello-world by `make target=run_c`
-* Disassemble hello-world binary by `make target=riscv_dasm`
-    * Objdump file located at `./out/hello.riscv.dasm`
+See [Compile and run c code on Ariane](c.md)
