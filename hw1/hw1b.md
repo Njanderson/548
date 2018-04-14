@@ -14,6 +14,8 @@ Then after this is done, you will run the profiler on the benchmark suite availa
 * The modified version of the [Ariane](https://bitbucket.org/taylor-bsg/cse548-18sp-hw/src/master/hw1/src/ariane.sv) top file, containing your
 instrumentation code. See the [Verilog Tracer](tracer.md) code for an example.
 
+* The assembly tests for testing individual stall conditions. Place a comment at the top of the test indicating which stall condition you are testing. You should also explain the rational for the particular stall condition.
+
 * A ASCII file with a table containing the following information obtained with the new version of the Verilog Tracer
 
 | Benchmark | event-count-1 | event-count-2 | event-count-..| event-count-N |
@@ -36,8 +38,6 @@ instrumentation code. See the [Verilog Tracer](tracer.md) code for an example.
 
 This table will contain the data for both your tests and for the benchmarks. Each type of stall should have a specific test that exercises that stall, and it should be evident from the above data that you have written a good test that
 really hammers on this stall condition!
-
-* The assembly tests for testing individual stall conditions. Place a comment at the top of the test indicating which stall condition you are testing. You should also explain the rational for the particular stall condition.
 
 * The events we are interested in are:
 
