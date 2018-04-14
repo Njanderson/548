@@ -23,13 +23,15 @@ code for the improved [Verilog Tracer](tracer.md)
 * The events we are interested in are:
 
     * Global
-        1. The number of mispredicts for every 1000 committed instructions (table-name:mpki)
         2. The number of committed instructions (table-name:ci)
         3. The number of cycles without committing instructions (table-name:no-ci)
         4. The total number of cycles (table-name:total)
 
-    * Frontend stalls:
+    * Frontend stalls and efficiency:
         1. The number of stalls due to no-valid instructions in the instruction decode (ID) stage (table-name:id-stall)
+        2. The number of mispredicts for every 1000 committed instructions (miss per kilo insturctions) (table-name:mpki)
+
+    * Middle-end stalls:
         2. The number of stalls due to no-space in the scoreboard (NR_SB_ENTRIES) (table-name:sb-stall)
         3. The number of stalls due to an unresolved branch (table-name:br-stall)
         4. The number of exceptions or instructions-that-not-use-functional-units (table-name:exfu)
