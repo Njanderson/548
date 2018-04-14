@@ -10,30 +10,8 @@ RTL-implementation and generate a binary for simulation.
 
 ## Test
 
-### Download, build, and run [riscv-tests](https://github.com/riscv/riscv-tests)
+### [hello-world](https://bitbucket.org/taylor-bsg/cse548-18sp-hw/src/master/hw1/src/hello.c)
 
-* Download and build riscv-tests by `make target=build_benchmark`
-* Run all benchmarks (except spmv, mm, mt-matmul, and mt-vvadd) by `make target=run_benchmark`
-
-| Benchmark     | Status  |
-| ------------- | ------- |
-| median        | PASS    |
-| dhrystone     | PASS    |
-| multiply      | PASS    |
-| pmp           | PASS    |
-| towers        | PASS    |
-| qsort         | PASS    |
-| rsort         | PASS    |
-| vvadd         | PASS    |
-|---------------|---------|
-| spmv          | FAIL    |
-| mm            | FAIL    |
-| mt-matmul     | FAIL    |
-| mt-vvadd      | FAIL    |
-
-### Build and run a simple [hello-world](https://bitbucket.org/taylor-bsg/cse548-18sp-hw/src/master/hw1/src/hello.c)
-
-* Build `make target=build_hello`
-* Run `make target=run_hello`
+* Build and run `make target=run_c`
 * Disassemble binary by `make target=riscv_dasm`
     * Objdump file located at `./out/hello.riscv.dasm`

@@ -75,8 +75,6 @@ $(ariane_dir):
 
 # riscv tests
 
-test ?= benchmarks/median.riscv
-
 bmarks = \
 median \
 dhrystone \
@@ -87,7 +85,6 @@ rsort \
 vvadd
 
 run_benchmark: $(addsuffix .bmark.trace.dasm,$(addprefix $(out_dir)/,$(bmarks)))
-#run_benchmark: $(out_dir)/median.trace.dasm$(out_dir)/median.trace.dasm
 
 $(out_dir)/%.bmark.trace.dasm: build_benchmark ariane
 	$(out_dir)/ariane $(out_dir)/benchmark/$*.riscv
@@ -110,22 +107,25 @@ $(rvtests_dir):
 	git -C $@ checkout $(rvtests_ver) -b cse548
 	git -C $@ submodule update --init --recursive
 
-# hello world
+# compile and run from C source
 
 CC = riscv64-unknown-elf-gcc
 OBJDUMP = riscv64-unknown-elf-objdump
 
-sim_opt = "--vcd=$(out_dir)/ariane.vcd" #, store waveform in test.vcd
+test_c = hello
 
-run_hello: $(out_dir)/hello.trace.dasm
+# store waveform in test.vcd, uncomment sim_opt if you need  it
+# sim_opt = "--vcd=$(out_dir)/ariane.vcd"
 
-$(out_dir)/hello.trace.dasm: build_hello ariane
-	$(out_dir)/ariane $(sim_opt) $(out_dir)/hello.riscv
+run_c: $(out_dir)/$(test_c).trace.dasm
+
+$(out_dir)/%.trace.dasm: $(out_dir)/%.riscv ariane
+	$(out_dir)/ariane $(sim_opt) $<
 	@cat $(out_dir)/ariane.trace.dasm | spike-dasm > $@
 
-build_hello: $(out_dir)/hello.riscv
+build_c: $(out_dir)/$(test_c).riscv
 
-$(out_dir)/hello.riscv: $(src_dir)/hello.c $(rvtests_dir)
+$(out_dir)/%.riscv: $(src_dir)/%.c $(rvtests_dir)
 	mkdir -p $(dir $@)
 	$(CC) -I$(rvtests_dir)/benchmarks/../env -I$(rvtests_dir)/benchmarks/common \
 	-DPREALLOCATE=1 -mcmodel=medany -static -std=gnu99 -O2 -ffast-math -fno-common \
@@ -133,10 +133,10 @@ $(out_dir)/hello.riscv: $(src_dir)/hello.c $(rvtests_dir)
 	$(rvtests_dir)/benchmarks/common/crt.S  -nostartfiles -lm -lgcc \
 	-T $(rvtests_dir)/benchmarks/common/test.ld -o $@ $<
 
-$(out_dir)/hello.riscv.dasm: $(out_dir)/hello.riscv
-	$(OBJDUMP) --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.data $< > $@
+riscv_dasm: $(out_dir)/$(test_c).riscv.dasm
 
-riscv_dasm: $(out_dir)/hello.riscv.dasm
+$(out_dir)/%.riscv.dasm: $(out_dir)/%.riscv
+	$(OBJDUMP) --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.data $< > $@
 
 clean:
 	$(docker_cmd) /bin/rm -rf $(docker_out_dir)
