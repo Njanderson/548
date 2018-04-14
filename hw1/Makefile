@@ -81,7 +81,6 @@ bmarks = \
 median \
 dhrystone \
 multiply \
-pmp \
 towers \
 qsort \
 rsort \

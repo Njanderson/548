@@ -18,7 +18,6 @@ In this homework, we are going to accomplish
 | median        | PASS    |
 | dhrystone     | PASS    |
 | multiply      | PASS    |
-| pmp           | PASS    |
 | towers        | PASS    |
 | qsort         | PASS    |
 | rsort         | PASS    |
@@ -27,6 +26,7 @@ In this homework, we are going to accomplish
 | mm            | FAIL    |
 | mt-matmul     | FAIL    |
 | mt-vvadd      | FAIL    |
+| pmp           | ----    |
 
 # Tips
 
