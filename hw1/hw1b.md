@@ -61,8 +61,7 @@ else if (functional-unit-..-busy ) // backend stall
     stall-reason = fu-..-busy-stall
 else if (waw-hazard) // backend stall
     stall-reason = waw-stall
-
-
+```
 
 ## Setup
 
