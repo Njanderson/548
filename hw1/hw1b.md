@@ -1,17 +1,31 @@
 # Profile Ariane
 
-In this homework, we are going to profile Ariane and find sources of inefficiencies (stalls)
-for the benchmark suite available in [riscv-tests](https://github.com/riscv/riscv-tests)
+In this homework, we are going to figure out how good an implementation of an in-order core Ariane is,
+and also identify opportunities for optimization.
+
+We will insert instrumentation code in SystemVerilog at the top level in order to profile Ariane and find sources of inefficiency (stalls).
+You will first perform this on a set of hand-written tests that you design which will help you debug your code and understand
+the Ariane pipeline better.
+
+Then after this is done, you will run the profiler on the benchmark suite available in [riscv-tests] (See https://github.com/riscv/riscv-tests).
 
 ## Turnin using Canvas
 
-* The modified version of the [Ariane](https://bitbucket.org/taylor-bsg/cse548-18sp-hw/src/master/hw1/src/ariane.sv) top file, containing the
-code for the improved [Verilog Tracer](tracer.md)
+* The modified version of the [Ariane](https://bitbucket.org/taylor-bsg/cse548-18sp-hw/src/master/hw1/src/ariane.sv) top file, containing your
+instrumentation code. See the [Verilog Tracer](tracer.md) code for an example.
 
 * A ASCII file with a table containing the following information obtained with the new version of the Verilog Tracer
 
 | Benchmark | event-count-1 | event-count-2 | event-count-..| event-count-N |
 |-----------|---------------|---------------|---------------|---------------|
+| test_1    | | | |
+| test_2    | | | |
+| test_3    | | | |
+| test_4    | | | |
+| test_5    | | | |
+| test_6    | | | |
+| test_..   | | | |
+| test_N    | | | |
 | median    | | | |
 | dhrystone | | | |
 | multiply  | | | |
@@ -19,6 +33,11 @@ code for the improved [Verilog Tracer](tracer.md)
 | qsort     | | | |
 | rsort     | | | |
 | vvadd     | | | |
+
+This table will contain the data for both your tests and for the benchmarks. Each type of stall should have a specific test that exercises that stall, and it should be evident from the above data that you have written a good test that
+really hammers on this stall condition!
+
+* The assembly tests for testing individual stall conditions. Place a comment at the top of the test indicating which stall condition you are testing. You should also explain the rational for the particular stall condition.
 
 * The events we are interested in are:
 
