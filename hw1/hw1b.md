@@ -5,7 +5,8 @@ and also identify opportunities for optimization, by writing a profiler.
 
 To write the profiler, we will insert instrumentation code in SystemVerilog at the top level in order to profile Ariane and find sources of inefficiency.
 
-In a single-issue in-order processor, ideal performance is <b>one instruction per cycle</b>.
+In a single-issue in-order processor, ideal performance is **one instruction per cycle**. Anything less than that corresponds to some kind of stall condition in the processor.
+We can address those stalls by improving the code, or 
 
 You will first perform this on a set of hand-written tests that you design which will help you debug your code and understand
 the Ariane pipeline better.
