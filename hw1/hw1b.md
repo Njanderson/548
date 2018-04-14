@@ -9,7 +9,7 @@ Rebuild the Docker image
 
 ## Helpers for the homework
 
-1. Ariane top file is now located at [src/ariane.sv](ariane.sv) or [ariane.sv](https://bitbucket.org/taylor-bsg/cse548-18sp-hw/src/master/hw1/src/ariane.sv)
+1. Ariane top file is now located at `src/ariane.sv` or [ariane.sv](https://bitbucket.org/taylor-bsg/cse548-18sp-hw/src/master/hw1/src/ariane.sv)
 2. [Profile Ariane with a tracer instrumented in Verilog](tracer.md)
 3. [Compile and run assembly code on Ariane](assembly.md)
 4. [Compile and run c code on Ariane](c.md)
