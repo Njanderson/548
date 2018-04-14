@@ -69,7 +69,7 @@ else if (waw-hazard) // backend stall
 
 ## Infrastructure
 
-What we're asking you to do is not particularly easy, but hey, you're taking a UW grad quals class, and if you complete this assignment, you will understand Ariane very well, and the Ariane core will
+What we're asking you to do is not particularly easy, but hey, you're taking a UW grad quals class, and when you complete this assignment, you will understand Ariane very well, and the Ariane core will
 be yours to use and modify for any project you undertake. Strap on those superpowers!
 
 To speed you on your way, we're going to give some protips and infrastructure, based on Prof. Taylor and Super TA Luis's experience hacking processors and SystemVerilog:
