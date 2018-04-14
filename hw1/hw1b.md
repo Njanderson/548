@@ -108,6 +108,8 @@ Rebuild the Docker image
 
 ## Turnin using Canvas
 
+We expect these things:
+
 * The modified version of the [Ariane](https://bitbucket.org/taylor-bsg/cse548-18sp-hw/src/master/hw1/src/ariane.sv) top file, containing your
 instrumentation code. See the [Verilog Tracer](tracer.md) code for an example. 
 
