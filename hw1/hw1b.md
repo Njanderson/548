@@ -9,7 +9,7 @@ the Ariane pipeline better.
 
 Then after this is done, you will run the profiler on the benchmark suite available in [riscv-tests] (See https://github.com/riscv/riscv-tests).
 
-* The events we are interested in are:
+* Here is a set of starter stalls to look at:
 
     * Global
         + The total number of cycles (table-name:total) 
@@ -26,6 +26,13 @@ Then after this is done, you will run the profiler on the benchmark suite availa
         + The number of stalls due to unavailable operands in the issue-stage (table-name:operand-stall)
         + The number of stalls due to functional unit <name> busy (table-name:fu-<name>-busy-stall)
         + The number of stalls due to WAW hazerds (table-name:waw-stall)
+
+
+We loosely attribute the sources of stalls in the Ariane pipeline to being frontend stalls, middle-end stalls, and backend stalls. Front end stalls are those associated with fetching instructions; 
+e.g. branch mispredict latencies, instruction cache misses, i-tlb misses, etc. Middle-end stalls are related to the control logic that schedules instructions. Back-end stalls are related to delays in actually executing instructions; 
+i.e. a data cache stall, or a stall due to an iterative divider being busy.
+
+In the most simple pipelines, it is easy to attribute a stall to a particular root cause. But in more advanced pipelines (such as Ariane), the pipeline may overlap stalls that are happening from different instruction in time. So the accounting gets hairy. 
 
 Multiple events related to frontend and backend stalls can happen at the same time, therefore we would want to count them
 properly. For example, a frontend stall has precedence over backend stalls. Therefore, we created a pseudocode that
