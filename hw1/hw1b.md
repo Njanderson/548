@@ -16,7 +16,7 @@ instrumentation code. See the [Verilog Tracer](tracer.md) code for an example.
 
 * The assembly tests for testing individual stall conditions. Place a comment at the top of the test indicating which stall condition you are testing. You should also explain the rational for the particular stall condition.
 
-* A ASCII file with a table containing the following information obtained with your instrumentation code.
+* An ASCII file with a table containing the following information obtained with your instrumentation code.
 
 | Benchmark | event-count-1 | event-count-2 | event-count-..| event-count-N |
 |-----------|---------------|---------------|---------------|---------------|
