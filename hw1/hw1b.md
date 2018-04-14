@@ -38,7 +38,7 @@ i.e. a data cache stall, or a stall due to an iterative divider being busy.
 
 In Ariane, the front end and the backend can work in parallel, so a backend cache stall does not necessarily prevent the front end from advancing. So we must build our own
 prioritization map for stalls in Ariane. (Of course, if both caches are missing and there is contention on the external memory system, that could be another such dependence creeping in. 
-Perhaps we need some kind of independent countention stall counter? =P )
+Perhaps we need some kind of independent DRAM contention stall counter? =P )
 
 Moreover, we must be aware that in advanced pipelines (such as Ariane), the pipeline may overlap stalls that are happening from different instructions in time. 
 This forces us to abandon the notion that if we reduce the number of a particular type of stall, that we will necessarily see a decrease in total stalls. 
