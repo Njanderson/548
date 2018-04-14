@@ -41,9 +41,9 @@ prioritization map for stalls in Ariane. (Of course, if both caches are missing 
 
 Moreover, we must be aware that in advanced pipelines (such as Ariane), the pipeline may overlap stalls that are happening from different instructions in time. 
 This forces us to abandon the notion that if we reduce the number of a particular type of stall, that we will necessarily see a decrease in total stalls. 
-Eliminating one class of stall may just cause other stalls to be unmasked.
+Optimizing the pipeline or the code to eliminate one class of stall may just cause other stalls to be unmasked.
 
-Below we have written some pseudo code for what we think the stall-attribution calculation should be. But this is just a starting place -- we may be wrong!
+Below we have written some pseudo code for what we think the stall-attribution calculation should be. But this is just a starting place -- you will need to examine this and make it better!
 
 ```
 if (no-valid-instruction-id-stage) // frontend stall
@@ -54,14 +54,14 @@ else if (unresolved-branch) // middle-end stall
     stall-reason = br-stall
 else if (exception || instruction-that-not-use-functional-units) // not-a-stall-but-we-like-to-count-it
     stall-reason = exfu
+else if (unavailable-operand-load-store-unit) // backend stall
+    stall-reason = load-store-operand-stall    
 else if (unavailable-operand) // backend stall
     stall-reason = operand-stall
-else if (functional-unit-A-busy && uses fu-A) // backend stall
-    stall-reason = fu-A-busy-stall
-else if (functional-unit-B-busy && uses fu-B) // backend stall
-    stall-reason = fu-B-busy-stall
-else if (functional-unit-..-busy && uses fu-C ) // backend stall
-    stall-reason = fu-..-busy-stall
+else if (functional-unit-load-store-busy && uses fu-load-store) // backend stall
+    stall-reason = fu-load-store-busy-stall
+else if (functional-unit-busy) // backend stall
+    stall-reason = fu-unit-busy-stall
 else if (waw-hazard) // backend stall
     stall-reason = waw-stall
 ```
