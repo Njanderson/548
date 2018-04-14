@@ -45,19 +45,19 @@ will allow you to make this count right.
 ```
 if (no-valid-instruction-id-stage) // frontend stall
     stall-reason = id-stall
-else if (no-space-in-scoreboard) // frontend stall
+else if (no-space-in-scoreboard) // middle-end stall
     stall-reason = sb-stall
-else if (unresolved-branch) // frontend stall
+else if (unresolved-branch) // middle-end stall
     stall-reason = br-stall
 else if (exception || instruction-that-not-use-functional-units) // not-a-stall-but-we-like-to-count-it
     stall-reason = exfu
 else if (unavailable-operand) // backend stall
     stall-reason = operand-stall
-else if (functional-unit-A-busy & uses fu-A) // backend stall
+else if (functional-unit-A-busy && uses fu-A) // backend stall
     stall-reason = fu-A-busy-stall
-else if (functional-unit-B-busy & uses fu-B) // backend stall
+else if (functional-unit-B-busy && uses fu-B) // backend stall
     stall-reason = fu-B-busy-stall
-else if (functional-unit-..-busy ) // backend stall
+else if (functional-unit-..-busy && uses fu-C ) // backend stall
     stall-reason = fu-..-busy-stall
 else if (waw-hazard) // backend stall
     stall-reason = waw-stall
