@@ -30,8 +30,8 @@ Then after this is done, you will run the profiler on the benchmark suite availa
         + The number of stalls due to no-valid instructions in the instruction decode (ID) stage (table-name:frontend-stall)
         + The number of mispredicts for every 1000 committed instructions (miss per kilo insturctions) (table-name:mpki)
     * Middle-end stalls:
-        + The number of stalls due to no-space in the scoreboard (NR_SB_ENTRIES) (table-name:sb-stall)
-        + The number of stalls due to an unresolved branch (table-name:br-stall)
+        + The number of stalls due to no-space in the scoreboard (NR_SB_ENTRIES) (table-name:scoreboard-stall)
+        + The number of stalls due to an unresolved branch (table-name:urbr-stall)
         + The number of exceptions or instructions-that-dont-use-functional-units (table-name:exfu)
     * Backend stalls:
         + The number of stalls due to unavailable operands in the issue-stage (table-name:operand-stall)
