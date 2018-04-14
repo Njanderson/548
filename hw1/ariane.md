@@ -12,6 +12,6 @@ RTL-implementation and generate a binary for simulation.
 
 ### [hello-world](https://bitbucket.org/taylor-bsg/cse548-18sp-hw/src/master/hw1/src/hello.c)
 
-* Build and run `make target=run_c`
-* Disassemble binary by `make target=riscv_dasm`
+* Build and run hello-world by `make target=run_c`
+* Disassemble hello-world binary by `make target=riscv_dasm`
     * Objdump file located at `./out/hello.riscv.dasm`

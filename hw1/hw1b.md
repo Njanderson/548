@@ -1,7 +1,7 @@
 # Profile Ariane
 
 In this homework, we are going to profile Ariane and find sources of inefficiencies (stalls)
-for the benchmark suite provided in [riscv-tests](https://github.com/riscv/riscv-tests)
+for the benchmark suite provided by [riscv-tests](https://github.com/riscv/riscv-tests)
 
 ## Setup
 
@@ -13,6 +13,6 @@ Rebuild the Docker image
 2. [Profile Ariane with a tracer instrumented in Verilog](tracer.md)
 3. [Compile and run assembly code on Ariane](assembly.md)
 4. [Compile and run c code on Ariane](c.md)
-5. [Compile and run benchamrks on Ariane](benchmark.md)
+5. [Compile and run benchmarks on Ariane](benchmark.md)
 
 ## Turnin using
