@@ -9,6 +9,7 @@ Rules of engagement:
 * You can pair in a team of two for the assignment, and submit one homework.
 * You can discuss in larger groups, but just to discuss how the code works, not to write it up.
 * Add the name of the both your team member and any "larger group" members to the document.
+* Get started early. It helps to download this into your brain and let your subconcious work on it!
 
 To write the profiler, you will insert instrumentation code in SystemVerilog at the top level in order to profile Ariane and find sources of inefficiency.
 
