@@ -769,6 +769,106 @@ module ariane #(
 
     // BEGIN your answer h1wb
 
+    /*
+    TODO:
+        TODO: Make a class like their tracer that has all of these variables.
+        TODO: it does not differentiate between delays from a data cache miss and just data cache latency.
+        TODO: it not differentiate between icache miss stalls and branch taken or branch mispredict stalls.
+    */
+
+    /*
+    NOTES
+        FILE: issue_read_operands.sv
+            stall line:179            // whether the instructions operands are available
+            issue_instr_i.fu line:157 // which functional unit is used
+            fu_busy line:157          // whether the functional unit is busy
+            
+            issue_ack_o line:118 // whether the instruction is issued
+            (issue_instr_valid_i) // from scoreboard.sv line:85-86
+            AND ((input-operand-available AND target-fu-not-busy AND not-WAW-hazard)
+                    OR (exception)
+                    OR (instruction-not-use-fu))
+
+        FILE: scoreboard.sv line:85-86
+            issue_instr_valid_o  = decoded_instr_valid_i && !unresolved_branch_i && !issue_full;
+            decoded_instr_ack_o    = issue_ack_i && !issue_full;
+    */
+
+    always_ff @(posedge clk_i) begin
+        logic no_valid_instruction_id_stage;
+        logic no_space_in_scoreboard;
+        logic unresolved_branch;
+        logic exception;
+        logic instruction_that_not_use_functional_units;
+        logic unavailable_operand_load_store_unit;
+        logic unavailable_operand;
+        logic functional_unit_load_store_busy;
+        logic uses_fu_load_store;
+        logic functional_unit_busy;
+        logic waw_hazard;
+
+        localparam length = 50;
+        logic [length*8:0] stall_reason;
+
+        logic[length*8:0] id_stall;
+        logic[length*8:0] sb_stall;
+        logic[length*8:0] br_stall;
+        logic[length*8:0] exfu;
+        logic[length*8:0] load_store_operand_stall;
+        logic[length*8:0] operand_stall;
+        logic[length*8:0] fu_unit_busy_stall;
+        logic[length*8:0] waw_stall;
+        logic[length*8:0] fu_load_store_busy_stall;
+
+        assign id_stall = "Instr. Decode Stall";
+        assign sb_stall = "Scoreboard Full Stall";
+        assign br_stall = "Branch Stall";
+        assign exfu = "Instr. Decode Stall";
+        assign load_store_operand_stall = "Load/Store Operand Stall";
+        assign operand_stall = "Operand Stall";
+        assign fu_unit_busy_stall = "Func. Unit Busy Stall";
+        assign waw_stall = "Write after Write Stall";
+        assign fu_load_store_busy_stall = "Func. Unit Store Busy Stall";
+        
+        assign no_valid_instruction_id_stage                = 0;
+        // Scoreboard's issue_full signal, line:73
+        // decoded_instr_ack_o    = issue_ack_i && !issue_full;
+        assign no_space_in_scoreboard                       = !issue_stage_i.scoreboard_i.decoded_instr_ack_o && issue_stage_i.scoreboard_i.issue_ack_i;
+        assign unresolved_branch                            = issue_stage_i.scoreboard_i.unresolved_branch_i;
+        assign exception                                    = 0;
+        assign instruction_that_not_use_functional_units    = 0;
+        assign unavailable_operand_load_store_unit          = 0;
+        assign unavailable_operand                          = 0;
+        assign functional_unit_load_store_busy              = 0;
+        assign uses_fu_load_store                           = 0;
+        assign functional_unit_busy                         = 0;
+        assign waw_hazard                                   = 0;
+
+        stall_reason = "";
+        if (no_valid_instruction_id_stage) // frontend stall
+            stall_reason = id_stall;
+        else if (no_space_in_scoreboard) // middle_end stall
+            stall_reason = sb_stall;
+        else if (unresolved_branch) // middle_end stall
+            stall_reason = br_stall;
+        else if (exception || instruction_that_not_use_functional_units) // not_a_stall_but_we_like_to_count_it
+            stall_reason = exfu;
+        else if (unavailable_operand_load_store_unit) // backend stall
+            stall_reason = load_store_operand_stall;    
+        else if (unavailable_operand) // backend stall
+            stall_reason = operand_stall;
+        else if (functional_unit_load_store_busy && uses_fu_load_store) // backend stall
+            stall_reason = fu_load_store_busy_stall;
+        else if (functional_unit_busy) // backend stall
+            stall_reason = fu_unit_busy_stall;
+        else if (waw_hazard) // backend stall
+            stall_reason = waw_stall;
+
+        if (stall_reason != "") begin
+            $fwrite(f, "cycle:%08d No commit reason: %s\n", cycles, stall_reason);
+        end
+    end // always_ff @(posedge clk_i)
+
     // END your answer h1wb
 
     final begin
@@ -776,4 +876,8 @@ module ariane #(
     end
     `endif
 
+    // -------------------
+    // Ariane Profiler
+    // -------------------
+    
 endmodule // ariane
