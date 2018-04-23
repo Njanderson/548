@@ -774,6 +774,7 @@ module ariane #(
         TODO: Make a class like their tracer that has all of these variables.
         TODO: it does not differentiate between delays from a data cache miss and just data cache latency.
         TODO: it not differentiate between icache miss stalls and branch taken or branch mispredict stalls.
+        TODO: Perhaps we need some kind of independent DRAM contention stall counter
     */
 
     /*
@@ -807,7 +808,7 @@ module ariane #(
         logic functional_unit_busy;
         logic waw_hazard;
 
-        localparam length = 50;
+        localparam length = 30;
         logic [length*8:0] stall_reason;
 
         logic[length*8:0] id_stall;
@@ -865,7 +866,7 @@ module ariane #(
             stall_reason = waw_stall;
 
         if (stall_reason != "") begin
-            $fwrite(f, "cycle:%08d No commit reason: %s\n", cycles, stall_reason);
+            $fwrite(f, "cycle:%08d reason for no commit: %s\n", cycles, stall_reason);
         end
     end // always_ff @(posedge clk_i)
 

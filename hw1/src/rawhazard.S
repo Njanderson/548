@@ -14,8 +14,8 @@ program:
 	lui a0, 0xdead // help identify start of block
 	li a1, 23
 	li a2, 10
-	divu a3, a1, a2
-	add a3, a3, a3 // Read after Write hazard
+	add a3, a1, a2
+    li a1, a3 // Read after Write hazard
 	lui a0, 0xbeef // help identify end of block
 	j test_end
 
